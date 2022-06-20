@@ -6,7 +6,6 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { agate } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 import { NextSeo } from 'next-seo';
-import { join } from 'path';
 
 import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';

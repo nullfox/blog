@@ -1,5 +1,7 @@
 import { Box, SimpleGrid } from '@chakra-ui/react';
 
+import { NextSeo } from 'next-seo';
+
 import CollectionPost from '../components/CollectionPost';
 import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
@@ -18,6 +20,18 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
+      <NextSeo
+        title="Ben Fox's Blog"
+        description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
+        openGraph={{
+          url: 'https://nullfox.com',
+          title: "Ben Fox's Blog",
+          description:
+            'Ben Fox blogging about TypeScript, open source, web application development and the cloud.',
+          images: [{ url: 'https://nullfox.com/images/logo.png' }],
+        }}
+      />
+
       <Box w="full" pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
         <FeaturedPost post={latest} />
       </Box>

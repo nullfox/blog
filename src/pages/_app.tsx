@@ -18,12 +18,12 @@ const App = ({ Component, pageProps }: AppProps) => (
       <link rel="shortcut icon" href="/images/logo.png" />
     </Head>
     <DefaultSeo
-      titleTemplate="Ben Fox | %s"
+      titleTemplate="%s | Ben Fox's Blog"
       openGraph={{
         type: 'website',
         locale: 'en_US',
         url: 'https://nullfox.com/',
-        site_name: 'Ben Fox',
+        site_name: "Ben Fox's Blog",
       }}
       twitter={{
         handle: '@thenullfox',
