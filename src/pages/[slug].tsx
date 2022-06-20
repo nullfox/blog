@@ -42,9 +42,7 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
 
   const shareToFacebook = () => {
     window.open(
-      `https://www.facebook.com/sharer/sharer.php?u=${
-        post.meta.title
-      }&url=${encodeURIComponent(url)}`,
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
       'shareWindow',
       'directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=650,height=400',
     );
@@ -56,7 +54,7 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
         url,
       )}`,
       'shareWindow',
-      'directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=600,height=500',
+      'directories=0,titlebar=0,toolbar=0,location=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=600,height=700',
     );
   };
 
