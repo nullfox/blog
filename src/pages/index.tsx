@@ -8,7 +8,11 @@ import CollectionPost from '../components/CollectionPost';
 import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import Primary from '../layouts/Primary';
-import { Post, getDefaultStaticProps } from '../services/content';
+import {
+  Post,
+  generateRssFeeds,
+  getDefaultStaticProps,
+} from '../services/content';
 
 interface IndexProps {
   posts: Post[];
@@ -73,6 +77,8 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
 };
 
 export async function getStaticProps() {
+  await generateRssFeeds();
+
   const props = await getDefaultStaticProps();
 
   return {

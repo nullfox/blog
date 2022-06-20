@@ -133,7 +133,7 @@ export const getDefaultStaticProps = async () => {
 
 export const generateRssFeeds = async () => {
   const posts = await getPosts();
-  const siteURL = process.env.SITE_URL;
+  const siteURL = 'https://nullfox.com';
   const date = new Date();
 
   const author = {
