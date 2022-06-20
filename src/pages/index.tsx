@@ -18,12 +18,12 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
-      <Box w="full" pt={16}>
+      <Box w="full" pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
         <FeaturedPost post={latest} />
       </Box>
 
       <Content tagCounts={tagCounts} featuredPost={featuredPost}>
-        <SimpleGrid columns={2} spacingX="5%" spacingY={16}>
+        <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={46}>
           {rest.map((item) => (
             <CollectionPost key={item.slug} post={item} />
           ))}

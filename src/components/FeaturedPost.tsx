@@ -27,9 +27,14 @@ const FeaturedPost = ({
   children,
   linkTitle = true,
 }: FeaturedPostProps) => (
-  <Flex w="full" alignItems="center" boxShadow="lg">
-    <Flex w="45%">
-      <VStack pr="15%" justifyContent="flex-start" spacing={6}>
+  <Flex w="full" flexWrap="wrap" alignItems="center" boxShadow="lg">
+    <Flex w={{ base: 'full', lg: '45%' }} mt={{ base: 6, lg: 0 }} order={1}>
+      <VStack
+        pr={{ base: 0, lg: '15%' }}
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        spacing={6}
+      >
         <HStack w="full">
           {post.meta.tags.map((tag) => (
             <Tag key={tag} tag={tag} />
@@ -41,6 +46,7 @@ const FeaturedPost = ({
             <Link>
               <Heading
                 as="h3"
+                fontSize={{ base: 'xl', lg: '3xl' }}
                 fontWeight="800"
                 lineHeight="base"
                 transition="all 0.3s"
@@ -54,6 +60,7 @@ const FeaturedPost = ({
         {!linkTitle && (
           <Heading
             as="h3"
+            fontSize={{ base: 'xl', lg: '3xl' }}
             fontWeight="800"
             lineHeight="base"
             transition="all 0.3s"
@@ -62,13 +69,21 @@ const FeaturedPost = ({
           </Heading>
         )}
 
-        <Text>{post.meta.description}</Text>
+        <Text fontSize={{ base: 'sm', lg: 'md ' }}>
+          {post.meta.description}
+        </Text>
 
         {children}
       </VStack>
     </Flex>
 
-    <Box w="55%" h="100%" overflow="hidden" borderRadius={6}>
+    <Box
+      w={{ base: 'full', lg: '55%' }}
+      h="100%"
+      overflow="hidden"
+      borderRadius={6}
+      order={0}
+    >
       <NextLink href={`/${post.slug}`} passHref>
         <Link>
           <Image objectFit="cover" className="zoom" src={post.meta.image} />

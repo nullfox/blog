@@ -93,7 +93,7 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
         }}
       />
 
-      <Box pt={16}>
+      <Box pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
         <FeaturedPost post={post} linkTitle={false}>
           <HStack w="full" pt={6}>
             <SocialButton

@@ -36,7 +36,12 @@ const Tag = ({ tag, posts, featuredPost, tagCounts }: TagProps) => {
         }}
       />
 
-      <Flex w="full" justifyContent="flex-start" pt={8}>
+      <Flex
+        w="full"
+        justifyContent="flex-start"
+        pt={8}
+        px={{ base: '5%', lg: 0 }}
+      >
         <Heading fontWeight="800" fontSize="3xl">
           Posts tagged{' '}
           <Text as="span" color="themeGray.500">
@@ -46,7 +51,7 @@ const Tag = ({ tag, posts, featuredPost, tagCounts }: TagProps) => {
       </Flex>
 
       <Content tagCounts={tagCounts} featuredPost={featuredPost}>
-        <SimpleGrid columns={2} spacingX="5%" spacingY={16}>
+        <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={16}>
           {(posts || []).map((item) => (
             <CollectionPost key={item.slug} post={item} />
           ))}

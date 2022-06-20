@@ -36,8 +36,6 @@ const CollectionPost = ({ post }: CollectionPostProps) => (
         </Heading>
       </Link>
     </NextLink>
-
-    <Text>{post.meta.readingTime} min read</Text>
   </Box>
 );
 

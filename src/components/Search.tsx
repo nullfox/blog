@@ -32,7 +32,7 @@ const Search = ({ tags, onSearch, onClose, onClickPost }: SearchProps) => {
   return (
     <Box w="full">
       <Flex w="full" justifyContent="center" pt={10}>
-        <Flex w="50%">
+        <Flex w={{ base: '90%', lg: '50%' }}>
           <InputGroup
             h="66px"
             sx={{
@@ -140,7 +140,7 @@ const Search = ({ tags, onSearch, onClose, onClickPost }: SearchProps) => {
       </Center>
 
       <Flex w="full" justifyContent="center" pt={10}>
-        <Flex w="40%" flexDir="column">
+        <Flex w={{ base: '90%', lg: '40%' }} flexDir="column">
           {results.map((result) => (
             <Box w="full" key={result.slug} mb={4}>
               <Button
@@ -174,7 +174,7 @@ const Search = ({ tags, onSearch, onClose, onClickPost }: SearchProps) => {
                     borderRadius={6}
                   />
 
-                  <Box ml={6}>
+                  <Box w="full" ml={6}>
                     <Text className="title" mt={1}>
                       {result.slug}
                     </Text>
