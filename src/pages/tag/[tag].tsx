@@ -30,7 +30,7 @@ const Tag = ({ tag, posts, featuredPost, tagCounts }: TagProps) => {
         title={`${tag} Posts`}
         description={`Posts tagged ${tag}`}
         openGraph={{
-          url: `https://nullfox.com/tag/${tag}`,
+          url: `https://www.nullfox.com/tag/${tag}`,
           title: `${tag} Posts`,
           description: `Posts tagged ${tag}`,
         }}

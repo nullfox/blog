@@ -22,7 +22,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       openGraph={{
         type: 'website',
         locale: 'en_US',
-        url: 'https://nullfox.com/',
+        url: 'https://www.nullfox.com/',
         site_name: "Ben Fox's Blog",
       }}
       twitter={{

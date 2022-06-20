@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { agate } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
-import { NextSeo } from 'next-seo';
+import { ArticleJsonLd, NextSeo } from 'next-seo';
 
 import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
@@ -27,7 +27,7 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
     return null;
   }
 
-  const url = `https://nullfox.com/${post.slug}`;
+  const url = `https://www.nullfox.com/${post.slug}`;
 
   const shareToTwitter = () => {
     window.open(
@@ -90,6 +90,18 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
           description: post.meta.description,
           images: [{ url: post.meta.image }],
         }}
+      />
+
+      <ArticleJsonLd
+        url={url}
+        title={post.meta.title}
+        images={[post.meta.image]}
+        datePublished={post.meta.date.toISOString()}
+        dateModified={post.meta.date.toISOString()}
+        authorName={['Ben Fox']}
+        publisherName="Ben Fox"
+        publisherLogo="https://www.nullfox.com/image/logo.png"
+        description={post.meta.description}
       />
 
       <Box pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
