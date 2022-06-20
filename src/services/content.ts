@@ -20,9 +20,9 @@ export interface Meta extends Omit<RawMeta, 'date'> {
   date: string;
 }
 
-export interface Post {
+export interface Post<M = Meta> {
   slug: string;
-  meta: RawMeta;
+  meta: M;
   content: string;
 }
 
@@ -41,7 +41,7 @@ export const getPostPaths = async () => {
   return files.map((file) => file.replace(extension, ''));
 };
 
-export const getPost = async (slug: string): Promise<Post> => {
+export const getPost = async (slug: string): Promise<Post<RawMeta>> => {
   const files = await getPostFiles();
 
   const file = files.find((path) => path === `${slug}${extension}`);

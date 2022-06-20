@@ -5,23 +5,14 @@ image: https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=com
 tags:
   - Javascript
   - TypeScript
-  - Foobar
 date: 2022-06-18
 ---
 
 > It's easy to want to pull in lodash or underscore for javascript array operations, but here are a few quick one liners that accomplish the same things.
 
-### Summary
-
-- [Arrays and you](#arrays-and-you)
-- [Union](#union)
-- [Intersection](#intersection)
-- [Difference](#difference)
-- [XOR](#xor)
-
 ## Arrays and you
 
-If you’ve ever had a couple arrays of data that you needed to massage and immediately leaned into `lodash` or `underscore` - you aren’t alone.
+If you’ve ever had arrays of data that you needed to massage, filter or manipulate and immediately reached for `lodash` or `underscore` - you aren’t alone.
 
 However, there’s another way and as an advocate for understanding how to write code instead of just pulling in libraries at will, let’s talk about how to use plain Javascript arrays to manipulate our two arrays of data into our desired final result set.
 
@@ -37,7 +28,7 @@ const animals: string[] = ['dog', 'gecko', 'shark'];
 Union is the simplest of all, just adding items from each array and coming up with a final aggregated array of items.
 
 ```typescript
-const results = [...mammals, ...animals];
+const results: string[] = [...mammals, ...animals];
 
 console.log(results); // ['cat', 'dog', 'dog', 'gecko', 'shark']
 ```
@@ -47,7 +38,7 @@ If you didn’t notice, there’s a problem with the output above. `dog` shows u
 The good news is that there’s an easy fix for this using ES6’s `Set` object which can only contain unique values.
 
 ```typescript
-const results = [...new Set([...mammals, ...animals])];
+const results: Set<string> = [...new Set([...mammals, ...animals])];
 
 console.log(results); // ['cat', 'dog', 'gecko', 'shark']
 ```
@@ -59,7 +50,7 @@ By spreading our arrays into a `Set` we get the natural de-duping behavior inher
 Intersection is just a fancy way of saying “give me the elements that only exist in both arrays”. Using our arrays above, we should end up with an array containing `dog`.
 
 ```typescript
-const results = animals.filter((animal) => mammals.includes(animal));
+const results: string[] = animals.filter((animal) => mammals.includes(animal));
 
 console.log(results); // ['dog']
 ```
@@ -69,11 +60,15 @@ console.log(results); // ['dog']
 Difference will return to us the elements in our “first” array that are not in our “second” array. First denotes the array that we are calling `filter` on and second is the array that we are calling `includes` on.
 
 ```typescript
-const mammalResults = mammals.filter((mammal) => !animals.includes(mammal));
+const mammalResults: string[] = mammals.filter(
+  (mammal) => !animals.includes(mammal),
+);
 
 console.log(mammalResults); // ['cat']
 
-const animalResults = animals.filter((animal) => !mammals.includes(animal));
+const animalResults: string[] = animals.filter(
+  (animal) => !mammals.includes(animal),
+);
 
 console.log(animalResults); // ['gecko', 'shark']
 ```
@@ -83,7 +78,7 @@ console.log(animalResults); // ['gecko', 'shark']
 XOR (exclusive or) or symmetric difference is especially handy when we want to get an array of results that only contain elements that don’t exist in the other array and vice versa. This can best be thought of doing a union on difference’d arrays. This is best illustrated with an example.
 
 ```typescript
-const results = mammals
+const results: string[] = mammals
   .filter((mammal) => !animals.includes(mammal))
   .concat(animals.filter((animal) => !mammals.includes(animal)));
 

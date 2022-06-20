@@ -96,8 +96,8 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
         url={url}
         title={post.meta.title}
         images={[post.meta.image]}
-        datePublished={post.meta.date.toISOString()}
-        dateModified={post.meta.date.toISOString()}
+        datePublished={post.meta.date}
+        dateModified={post.meta.date}
         authorName={['Ben Fox']}
         publisherName="Ben Fox"
         publisherLogo="https://www.nullfox.com/image/logo.png"

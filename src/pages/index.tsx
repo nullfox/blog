@@ -1,4 +1,6 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
+import { Box, Icon, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+
+import { FiFrown } from 'react-icons/fi';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
 
@@ -37,8 +39,8 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
         url="https://www.nullfox.com"
         title="Ben Fox's Blog"
         images={['https://www.nullfox.com/images/logo.png']}
-        datePublished={latest.meta.date.toISOString()}
-        dateModified={latest.meta.date.toISOString()}
+        datePublished={latest.meta.date}
+        dateModified={latest.meta.date}
         authorName="Ben Fox"
         description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
       />
@@ -48,11 +50,22 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
       </Box>
 
       <Content tagCounts={tagCounts} featuredPost={featuredPost}>
-        <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={46}>
-          {rest.map((item) => (
-            <CollectionPost key={item.slug} post={item} />
-          ))}
-        </SimpleGrid>
+        {rest.length > 0 && (
+          <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={46}>
+            {rest.map((item) => (
+              <CollectionPost key={item.slug} post={item} />
+            ))}
+          </SimpleGrid>
+        )}
+
+        {rest.length === 0 && (
+          <VStack pt={10}>
+            <Icon as={FiFrown} boxSize={16} color="rgba(255, 255, 255, 0.8)" />
+            <Text fontSize="2xl" color="rgba(255, 255, 255, 0.8)">
+              No posts found!
+            </Text>
+          </VStack>
+        )}
       </Content>
     </Primary>
   );
