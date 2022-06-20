@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Ben Fox's Blog</title>
+        <link>undefined</link>
+        <description></description>
+        <lastBuildDate>Mon, 20 Jun 2022 05:14:17 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>Ben Fox's Blog</title>
+            <url>undefined/logo.svg</url>
+            <link>undefined</link>
+        </image>
+        <copyright>All rights reserved 2022, Ben Fox</copyright>
+        <item>
+            <title><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
+            <link>undefined/blog/difference-intersection-union-xor-plain-javascript-es6</link>
+            <guid>undefined/blog/difference-intersection-union-xor-plain-javascript-es6</guid>
+            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></description>
+            <content:encoded><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content:encoded>
+            <author>social@nullfox.com (Ben Fox)</author>
+        </item>
+        <item>
+            <title><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
+            <link>undefined/blog/ea-aperiam-voluptates</link>
+            <guid>undefined/blog/ea-aperiam-voluptates</guid>
+            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></description>
+            <content:encoded><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content:encoded>
+            <author>social@nullfox.com (Ben Fox)</author>
+        </item>
+        <item>
+            <title><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
+            <link>undefined/blog/est-ut-provident</link>
+            <guid>undefined/blog/est-ut-provident</guid>
+            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></description>
+            <content:encoded><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content:encoded>
+            <author>social@nullfox.com (Ben Fox)</author>
+        </item>
+        <item>
+            <title><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
+            <link>undefined/blog/laboriosam-aut-nihil</link>
+            <guid>undefined/blog/laboriosam-aut-nihil</guid>
+            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></description>
+            <content:encoded><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content:encoded>
+            <author>social@nullfox.com (Ben Fox)</author>
+        </item>
+        <item>
+            <title><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
+            <link>undefined/blog/temporibus-rerum-aut</link>
+            <guid>undefined/blog/temporibus-rerum-aut</guid>
+            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></description>
+            <content:encoded><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content:encoded>
+            <author>social@nullfox.com (Ben Fox)</author>
+        </item>
+    </channel>
+</rss>

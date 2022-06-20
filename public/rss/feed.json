@@ -1,0 +1,72 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Ben Fox's Blog",
+    "feed_url": "undefined/rss/feed.json",
+    "icon": "undefined/logo.svg",
+    "author": {
+        "name": "Ben Fox",
+        "url": "https://linkedin.com/in/nullfox"
+    },
+    "items": [
+        {
+            "id": "undefined/blog/difference-intersection-union-xor-plain-javascript-es6",
+            "content_html": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "url": "undefined/blog/difference-intersection-union-xor-plain-javascript-es6",
+            "title": "Implementing difference, interaction, union and xor in ES6 javascript",
+            "summary": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "date_modified": "2022-06-18T00:00:00.000Z",
+            "author": {
+                "name": "Ben Fox",
+                "url": "https://linkedin.com/in/nullfox"
+            }
+        },
+        {
+            "id": "undefined/blog/ea-aperiam-voluptates",
+            "content_html": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "url": "undefined/blog/ea-aperiam-voluptates",
+            "title": "Implementing difference, interaction, union and xor in ES6 javascript",
+            "summary": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "date_modified": "2022-06-18T00:00:00.000Z",
+            "author": {
+                "name": "Ben Fox",
+                "url": "https://linkedin.com/in/nullfox"
+            }
+        },
+        {
+            "id": "undefined/blog/est-ut-provident",
+            "content_html": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "url": "undefined/blog/est-ut-provident",
+            "title": "Implementing difference, interaction, union and xor in ES6 javascript",
+            "summary": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "date_modified": "2022-06-18T00:00:00.000Z",
+            "author": {
+                "name": "Ben Fox",
+                "url": "https://linkedin.com/in/nullfox"
+            }
+        },
+        {
+            "id": "undefined/blog/laboriosam-aut-nihil",
+            "content_html": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "url": "undefined/blog/laboriosam-aut-nihil",
+            "title": "Implementing difference, interaction, union and xor in ES6 javascript",
+            "summary": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "date_modified": "2022-06-18T00:00:00.000Z",
+            "author": {
+                "name": "Ben Fox",
+                "url": "https://linkedin.com/in/nullfox"
+            }
+        },
+        {
+            "id": "undefined/blog/temporibus-rerum-aut",
+            "content_html": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "url": "undefined/blog/temporibus-rerum-aut",
+            "title": "Implementing difference, interaction, union and xor in ES6 javascript",
+            "summary": "Skip lodash and up your game with 0 dependency solutions for array filtering",
+            "date_modified": "2022-06-18T00:00:00.000Z",
+            "author": {
+                "name": "Ben Fox",
+                "url": "https://linkedin.com/in/nullfox"
+            }
+        }
+    ]
+}
