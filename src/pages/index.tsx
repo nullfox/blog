@@ -27,7 +27,8 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
         description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
         openGraph={{
           url: 'https://www.nullfox.com',
-          title: "Ben Fox's Blog",
+          title:
+            'Javascript Consultant, TypeScript Consultant, Web Application Developer',
           description:
             'Ben Fox blogging about TypeScript, open source, web application development and the cloud.',
           images: [{ url: 'https://www.nullfox.com/images/logo.png' }],

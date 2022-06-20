@@ -134,8 +134,8 @@ const Primary = ({ children, posts, tags }: PrimaryProps) => {
 
         <Flex>
           <NavigationLink href="/" label="Home" />
-          <NavigationLink href="/" label="About" />
-          <NavigationLink href="/" label="Contact" />
+          <NavigationLink href="/about" label="About" />
+          <NavigationLink href="/contact" label="Contact" />
         </Flex>
 
         <IconButton
