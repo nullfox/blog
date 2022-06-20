@@ -1,97 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id/>
+    <id>https://nullfox.com</id>
     <title>Ben Fox's Blog</title>
-    <updated>2022-06-20T05:44:53.065Z</updated>
+    <updated>2022-06-20T18:21:45.942Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben Fox</name>
         <email>social@nullfox.com</email>
         <uri>https://linkedin.com/in/nullfox</uri>
     </author>
-    <link rel="self" href="undefined/rss/atom.xml"/>
-    <logo>undefined/logo.svg</logo>
-    <icon>undefined/favicon.png</icon>
+    <link rel="alternate" href="https://nullfox.com"/>
+    <link rel="self" href="https://nullfox.com/rss/atom.xml"/>
+    <logo>https://nullfox.com/logo.svg</logo>
+    <icon>https://nullfox.com/favicon.png</icon>
     <rights>All rights reserved 2022, Ben Fox</rights>
     <entry>
-        <title type="html"><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
-        <id>undefined/blog/difference-intersection-union-xor-plain-javascript-es6</id>
-        <link href="undefined/blog/difference-intersection-union-xor-plain-javascript-es6"/>
+        <title type="html"><![CDATA[Implementing difference, intersection, union and xor in ES6 javascript]]></title>
+        <id>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</id>
+        <link href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"/>
         <updated>2022-06-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></summary>
-        <content type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content>
-        <author>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </author>
-        <contributor>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </contributor>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
-        <id>undefined/blog/ea-aperiam-voluptates</id>
-        <link href="undefined/blog/ea-aperiam-voluptates"/>
-        <updated>2022-06-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></summary>
-        <content type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content>
-        <author>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </author>
-        <contributor>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </contributor>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
-        <id>undefined/blog/est-ut-provident</id>
-        <link href="undefined/blog/est-ut-provident"/>
-        <updated>2022-06-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></summary>
-        <content type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content>
-        <author>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </author>
-        <contributor>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </contributor>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
-        <id>undefined/blog/laboriosam-aut-nihil</id>
-        <link href="undefined/blog/laboriosam-aut-nihil"/>
-        <updated>2022-06-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></summary>
-        <content type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content>
-        <author>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </author>
-        <contributor>
-            <name>Ben Fox</name>
-            <email>social@nullfox.com</email>
-            <uri>https://linkedin.com/in/nullfox</uri>
-        </contributor>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Implementing difference, interaction, union and xor in ES6 javascript]]></title>
-        <id>undefined/blog/temporibus-rerum-aut</id>
-        <link href="undefined/blog/temporibus-rerum-aut"/>
-        <updated>2022-06-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></summary>
-        <content type="html"><![CDATA[Skip lodash and up your game with 0 dependency solutions for array filtering]]></content>
+        <summary type="html"><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="https://images.pexels.com/photos/4087569/pexels-photo-4087569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, differening & unioning</p>]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="https://images.pexels.com/photos/4087569/pexels-photo-4087569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, differening & unioning</p>]]></content>
         <author>
             <name>Ben Fox</name>
             <email>social@nullfox.com</email>

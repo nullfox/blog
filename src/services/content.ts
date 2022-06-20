@@ -161,14 +161,16 @@ export const generateRssFeeds = async () => {
   });
 
   posts.forEach((post) => {
-    const url = `${siteURL}/blog/${post.slug}`;
+    const url = `${siteURL}/${post.slug}`;
+
+    const content = `<p><a href="${url}"><img src="${post.meta.image}" width="696"></a></p><p>${post.meta.description}</p>`;
 
     feed.addItem({
       title: post.meta.title,
       id: url,
       link: url,
-      description: post.meta.description,
-      content: post.meta.description,
+      description: content,
+      content,
       author: [author],
       contributor: [author],
       date: new Date(post.meta.date),
