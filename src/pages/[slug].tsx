@@ -8,17 +8,11 @@ import { agate } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import { NextSeo } from 'next-seo';
 import { join } from 'path';
 
+import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
-import {
-  Post,
-  getPostPaths,
-  getPosts,
-  getTagCounts,
-  getFeaturedPost,
-} from '../services/content';
-import Content from '../components/Content';
+import { Post, getDefaultStaticProps, getPostPaths } from '../services/content';
 
 interface SlugProps {
   posts: Post[];
@@ -27,10 +21,12 @@ interface SlugProps {
   tagCounts: Record<string, number>;
 }
 
-const CONTENT_ROOT = join(process.cwd(), 'content');
-
 const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
   const toast = useToast();
+
+  if (!post) {
+    return null;
+  }
 
   const url = `https://nullfox.com/${post.slug}`;
 
@@ -87,7 +83,7 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
   };
 
   return (
-    <Primary posts={posts} tags={Object.keys(tagCounts)}>
+    <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
       <NextSeo
         title={post.meta.title}
         description={post.meta.description}
@@ -159,7 +155,7 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
 };
 
 export async function getStaticPaths() {
-  const postPaths = await getPostPaths(CONTENT_ROOT);
+  const postPaths = await getPostPaths();
 
   return {
     paths: postPaths.map((slug) => ({
@@ -172,19 +168,14 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const posts = await getPosts(CONTENT_ROOT);
-  const tagCounts = await getTagCounts(CONTENT_ROOT);
-  const post = posts.find((post) => post.slug === slug);
-  const featuredPost = await getFeaturedPost(CONTENT_ROOT);
+  const props = await getDefaultStaticProps();
+  const post = props.posts.find((post) => post.slug === slug);
 
   return {
     props: {
       post,
-      posts,
-      featuredPost,
-      tagCounts,
+      ...props,
     },
-    revalidate: 1,
   };
 }
 

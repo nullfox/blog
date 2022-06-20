@@ -1,5 +1,4 @@
 {
-  "files": ["*.ts", "*.tsx"],
   "plugins": ["@typescript-eslint"],
   "extends": [
     "next/core-web-vitals",

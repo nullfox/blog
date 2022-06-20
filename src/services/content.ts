@@ -26,22 +26,23 @@ export interface Post {
   content: string;
 }
 
+const root = join(process.cwd(), 'content'); // '../../content';
 const extension = '.md';
 
-const getPostFiles = async (root: string) => {
+const getPostFiles = async () => {
   const files = await readdir(root);
 
   return files.filter((file) => file.endsWith(extension));
 };
 
-export const getPostPaths = async (root: string) => {
-  const files = await getPostFiles(root);
+export const getPostPaths = async () => {
+  const files = await getPostFiles();
 
   return files.map((file) => file.replace(extension, ''));
 };
 
-export const getPost = async (root: string, slug: string): Promise<Post> => {
-  const files = await getPostFiles(root);
+export const getPost = async (slug: string): Promise<Post> => {
+  const files = await getPostFiles();
 
   const file = files.find((path) => path === `${slug}${extension}`);
 
@@ -58,10 +59,10 @@ export const getPost = async (root: string, slug: string): Promise<Post> => {
   };
 };
 
-export const getPosts = async (root: string) => {
-  const slugs = await getPostPaths(root);
+export const getPosts = async () => {
+  const slugs = await getPostPaths();
 
-  const posts = await Promise.all(slugs.map((slug) => getPost(root, slug)));
+  const posts = await Promise.all(slugs.map((slug) => getPost(slug)));
 
   return posts
     .slice()
@@ -76,8 +77,8 @@ export const getPosts = async (root: string) => {
     }));
 };
 
-export const getFeaturedPost = async (root: string) => {
-  const posts = await getPosts(root);
+export const getFeaturedPost = async () => {
+  const posts = await getPosts();
 
   const featured = posts.find((p) => p.meta.featured);
 
@@ -88,8 +89,8 @@ export const getFeaturedPost = async (root: string) => {
   return posts[0];
 };
 
-export const getTagPaths = async (root: string) => {
-  const posts = await getPosts(root);
+export const getTagPaths = async () => {
+  const posts = await getPosts();
 
   const tags = new Set<string>();
 
@@ -102,8 +103,8 @@ export const getTagPaths = async (root: string) => {
   return Array.from(tags);
 };
 
-export const getTagCounts = async (root: string) => {
-  const posts = await getPosts(root);
+export const getTagCounts = async () => {
+  const posts = await getPosts();
 
   const counts = new Map<string, number>();
 
@@ -116,8 +117,22 @@ export const getTagCounts = async (root: string) => {
   return Object.fromEntries(counts);
 };
 
-export const generateRssFeeds = async (root: string) => {
-  const posts = await getPosts(root);
+export const getDefaultStaticProps = async () => {
+  const [posts, featuredPost, tagCounts] = await Promise.all([
+    getPosts(),
+    getFeaturedPost(),
+    getTagCounts(),
+  ]);
+
+  return {
+    posts,
+    featuredPost,
+    tagCounts,
+  };
+};
+
+export const generateRssFeeds = async () => {
+  const posts = await getPosts();
   const siteURL = process.env.SITE_URL;
   const date = new Date();
 

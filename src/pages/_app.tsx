@@ -11,26 +11,24 @@ import { AppProps } from 'next/app';
 
 import theme from '../theme';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ChakraProvider resetCSS theme={theme}>
-      <DefaultSeo
-        titleTemplate="Ben Fox | %s"
-        openGraph={{
-          type: 'website',
-          locale: 'en_US',
-          url: 'https://nullfox.com/',
-          site_name: 'Ben Fox',
-        }}
-        twitter={{
-          handle: '@thenullfox',
-          site: '@thenullfox',
-          cardType: 'summary',
-        }}
-      />
-      <Component {...pageProps} />
-    </ChakraProvider>
-  );
-}
+const App = ({ Component, pageProps }: AppProps) => (
+  <ChakraProvider resetCSS theme={theme}>
+    <DefaultSeo
+      titleTemplate="Ben Fox | %s"
+      openGraph={{
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://nullfox.com/',
+        site_name: 'Ben Fox',
+      }}
+      twitter={{
+        handle: '@thenullfox',
+        site: '@thenullfox',
+        cardType: 'summary',
+      }}
+    />
+    <Component {...pageProps} />
+  </ChakraProvider>
+);
 
-export default MyApp;
+export default App;

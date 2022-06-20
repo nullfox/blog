@@ -1,20 +1,10 @@
 import { Box, SimpleGrid } from '@chakra-ui/react';
 
-import { join } from 'path';
-
 import CollectionPost from '../components/CollectionPost';
 import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import Primary from '../layouts/Primary';
-import {
-  Post,
-  generateRssFeeds,
-  getPosts,
-  getTagCounts,
-  getFeaturedPost,
-} from '../services/content';
-
-const CONTENT_ROOT = join(process.cwd(), 'content');
+import { Post, getDefaultStaticProps } from '../services/content';
 
 interface IndexProps {
   posts: Post[];
@@ -27,7 +17,7 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
   const rest = posts.slice(1);
 
   return (
-    <Primary posts={posts} tags={Object.keys(tagCounts)}>
+    <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
       <Box w="full" pt={16}>
         <FeaturedPost post={latest} />
       </Box>
@@ -44,19 +34,10 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
 };
 
 export async function getStaticProps() {
-  await generateRssFeeds(CONTENT_ROOT);
-
-  const posts = await getPosts(CONTENT_ROOT);
-  const tagCounts = await getTagCounts(CONTENT_ROOT);
-  const featuredPost = await getFeaturedPost(CONTENT_ROOT);
+  const props = await getDefaultStaticProps();
 
   return {
-    props: {
-      posts,
-      featuredPost,
-      tagCounts,
-    },
-    revalidate: 1,
+    props,
   };
 }
 
