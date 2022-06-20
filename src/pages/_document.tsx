@@ -17,7 +17,7 @@ export default class Document extends NextDocument {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+            gtag('config', 'G-06MZCKWRQ9', {
               page_path: window.location.pathname,
             });
           `,
