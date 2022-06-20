@@ -28,7 +28,11 @@ const FeaturedPost = ({
   linkTitle = true,
 }: FeaturedPostProps) => (
   <Flex w="full" flexWrap="wrap" alignItems="center" boxShadow="lg">
-    <Flex w={{ base: 'full', lg: '45%' }} mt={{ base: 6, lg: 0 }} order={1}>
+    <Flex
+      w={{ base: 'full', lg: '45%' }}
+      mt={{ base: 6, lg: 0 }}
+      order={{ base: 1, lg: 0 }}
+    >
       <VStack
         pr={{ base: 0, lg: '15%' }}
         justifyContent="flex-start"
@@ -82,7 +86,7 @@ const FeaturedPost = ({
       h="100%"
       overflow="hidden"
       borderRadius={6}
-      order={0}
+      order={{ base: 0, lg: 1 }}
     >
       <NextLink href={`/${post.slug}`} passHref>
         <Link>
