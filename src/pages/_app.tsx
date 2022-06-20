@@ -8,11 +8,15 @@ import '@fontsource/poppins/700.css';
 import '@fontsource/poppins/800.css';
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
+import Head from 'next/head';
 
 import theme from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <ChakraProvider resetCSS theme={theme}>
+    <Head>
+      <link rel="shortcut icon" href="/images/logo.png" />
+    </Head>
     <DefaultSeo
       titleTemplate="Ben Fox | %s"
       openGraph={{

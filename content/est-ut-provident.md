@@ -5,6 +5,7 @@ image: https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=com
 tags:
   - TypeScript
 date: 2022-06-18
+featured: true
 ---
 
 _It's easy to want to pull in lodash or underscore for javascript array operations, but here are a few quick one liners that accomplish the same things._
