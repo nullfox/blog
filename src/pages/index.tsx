@@ -23,7 +23,7 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
       <NextSeo
-        title="Ben Fox's Blog"
+        title="Javascript Consultant, TypeScript Consultant, Web Application Developer"
         description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
         openGraph={{
           url: 'https://www.nullfox.com',
@@ -62,7 +62,7 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
           <VStack pt={10}>
             <Icon as={FiFrown} boxSize={16} color="rgba(255, 255, 255, 0.8)" />
             <Text fontSize="2xl" color="rgba(255, 255, 255, 0.8)">
-              No posts found!
+              No more posts!
             </Text>
           </VStack>
         )}
