@@ -9,6 +9,7 @@ import {
   Button,
   FormControl,
   FormLabel,
+  HStack,
   Heading,
   Icon,
   Input,
@@ -17,12 +18,14 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
+import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FiSmile } from 'react-icons/fi';
 
 import axios from 'axios';
 import { NextSeo } from 'next-seo';
 
 import Content from '../components/Content';
+import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
 import { Post, getDefaultStaticProps } from '../services/content';
 
@@ -117,7 +120,37 @@ const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
           (Or hola, bonjour - maybe even guten tag)
         </Text>
 
-        <Box w="full" mt={10} pr="15%">
+        <Text fontSize="2xl" fontWeight="600" color="themeGray.600" pt={10}>
+          On my socials
+        </Text>
+        <HStack
+          mt={4}
+          borderBottomWidth={1}
+          borderColor="border"
+          pb={8}
+          mb={8}
+          mr="15%"
+        >
+          <SocialButton
+            w="25%"
+            icon={FaTwitter}
+            onClick={() =>
+              window.open('https://twitter.com/thenullfox', '_blank')
+            }
+          />
+          <SocialButton
+            w="25%"
+            icon={FaLinkedinIn}
+            onClick={() =>
+              window.open('https://www.linkedin.com/in/nullfox', '_blank')
+            }
+          />
+        </HStack>
+
+        <Text fontSize="2xl" fontWeight="600" color="themeGray.600">
+          Send a message
+        </Text>
+        <Box w="full" mt={4} pr="15%">
           {status.info.error && (
             <Alert
               flexDirection="column"
@@ -138,7 +171,7 @@ const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
           {!success && (
             <form onSubmit={handleOnSubmit}>
               <FormControl>
-                <FormLabel fontWeight="600" fontSize="xl">
+                <FormLabel fontWeight="600" color="themeGray.500" fontSize="lg">
                   Email
                 </FormLabel>
                 <Input
@@ -150,7 +183,7 @@ const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
                 />
               </FormControl>
               <FormControl mt={10}>
-                <FormLabel fontWeight="600" fontSize="xl">
+                <FormLabel fontWeight="600" color="themeGray.500" fontSize="lg">
                   Message
                 </FormLabel>
                 <Textarea
