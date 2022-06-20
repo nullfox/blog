@@ -4,7 +4,7 @@
         <title>Ben Fox's Blog</title>
         <link>https://nullfox.com</link>
         <description></description>
-        <lastBuildDate>Mon, 20 Jun 2022 18:21:45 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 20 Jun 2022 19:37:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -18,8 +18,8 @@
             <link>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</link>
             <guid>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</guid>
             <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="https://images.pexels.com/photos/4087569/pexels-photo-4087569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, differening & unioning</p>]]></description>
-            <content:encoded><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="https://images.pexels.com/photos/4087569/pexels-photo-4087569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, differening & unioning</p>]]></content:encoded>
+            <description><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="/images/posts/card-deck.jpg" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & unioning</p>]]></description>
+            <content:encoded><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="/images/posts/card-deck.jpg" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & unioning</p>]]></content:encoded>
             <author>social@nullfox.com (Ben Fox)</author>
         </item>
     </channel>

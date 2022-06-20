@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nullfox.com</id>
     <title>Ben Fox's Blog</title>
-    <updated>2022-06-20T18:21:45.942Z</updated>
+    <updated>2022-06-20T19:37:47.550Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Ben Fox</name>
@@ -19,8 +19,8 @@
         <id>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</id>
         <link href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"/>
         <updated>2022-06-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="https://images.pexels.com/photos/4087569/pexels-photo-4087569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, differening & unioning</p>]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="https://images.pexels.com/photos/4087569/pexels-photo-4087569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, differening & unioning</p>]]></content>
+        <summary type="html"><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="/images/posts/card-deck.jpg" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & unioning</p>]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6"><img src="/images/posts/card-deck.jpg" width="696"></a></p><p>Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & unioning</p>]]></content>
         <author>
             <name>Ben Fox</name>
             <email>social@nullfox.com</email>
