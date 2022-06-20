@@ -142,6 +142,7 @@ const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
                   Email
                 </FormLabel>
                 <Input
+                  name="email"
                   onChange={handleOnChange}
                   type="email"
                   placeholder="test@test.com"
@@ -152,6 +153,7 @@ const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
                   Message
                 </FormLabel>
                 <Textarea
+                  name="message"
                   onChange={handleOnChange}
                   placeholder="I have project for you..."
                 />
