@@ -4,6 +4,7 @@ import NextLink from 'next/link';
 
 import { Post } from '../services/content';
 import Tag from './Tag';
+import ZoomImage from './ZoomImage';
 
 interface CollectionPostProps {
   post: Post;
@@ -11,13 +12,7 @@ interface CollectionPostProps {
 
 const CollectionPost = ({ post }: CollectionPostProps) => (
   <Box w="full">
-    <Box w="full" overflow="hidden" borderRadius={6}>
-      <NextLink href={`/${post.slug}`} passHref>
-        <Link>
-          <Image objectFit="cover" className="zoom" src={post.meta.image} />
-        </Link>
-      </NextLink>
-    </Box>
+    <ZoomImage h="unset" image={post.meta.image} href={`/${post.slug}`} />
     <HStack w="full" my={4}>
       {post.meta.tags.map((tag, idx) => (
         <Tag key={tag} tag={tag} />

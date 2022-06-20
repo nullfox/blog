@@ -12,8 +12,10 @@ import {
 } from '@chakra-ui/react';
 
 import NextLink from 'next/link';
+
 import { Post } from '../services/content';
 import { slug } from '../services/text';
+import ZoomImage from './ZoomImage';
 
 interface SidebarBoxProps {
   children: ReactNode;
@@ -48,20 +50,12 @@ interface FeaturedPostProps {
 export const FeaturedPost = ({ post }: FeaturedPostProps) => (
   <SidebarBox title="Featured Post">
     <Flex justifyContent="space-between" pt={2}>
-      <Box w="25%" overflow="hidden" borderRadius={6}>
-        <NextLink href={`/${post.slug}`} passHref>
-          <Link>
-            <AspectRatio w="full" ratio={1}>
-              <Image
-                h="100%"
-                objectFit="cover"
-                className="zoom"
-                src={post.meta.image}
-              />
-            </AspectRatio>
-          </Link>
-        </NextLink>
-      </Box>
+      <ZoomImage
+        aspect={1}
+        w="25%"
+        href={`/${post.slug}`}
+        image={post.meta.image}
+      />
 
       <Box w="70%">
         <NextLink href={`/${post.slug}`} passHref>

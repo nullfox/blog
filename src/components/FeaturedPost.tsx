@@ -15,6 +15,7 @@ import NextLink from 'next/link';
 
 import { Post } from '../services/content';
 import Tag from './Tag';
+import ZoomImage from './ZoomImage';
 
 interface FeaturedPostProps {
   post: Post;
@@ -81,19 +82,12 @@ const FeaturedPost = ({
       </VStack>
     </Flex>
 
-    <Box
+    <ZoomImage
+      href={`/${post.slug}`}
+      image={post.meta.image}
       w={{ base: 'full', lg: '55%' }}
-      h="100%"
-      overflow="hidden"
-      borderRadius={6}
       order={{ base: 0, lg: 1 }}
-    >
-      <NextLink href={`/${post.slug}`} passHref>
-        <Link>
-          <Image objectFit="cover" className="zoom" src={post.meta.image} />
-        </Link>
-      </NextLink>
-    </Box>
+    />
   </Flex>
 );
 
