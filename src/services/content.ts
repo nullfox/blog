@@ -84,7 +84,9 @@ export const getPosts = async (): Promise<Post[]> => {
 export const getFeaturedPost = async () => {
   const posts = await getPosts();
 
-  const featured = posts.find((p) => p.meta.featured);
+  const featured = posts
+    .filter((post) => !!post.meta.published)
+    .find((p) => p.meta.featured);
 
   if (featured) {
     return featured;
@@ -96,9 +98,11 @@ export const getFeaturedPost = async () => {
 export const getTagPaths = async () => {
   const posts = await getPosts();
 
+  const filtered = posts.filter((post) => !!post.meta.published);
+
   const tags = new Set<string>();
 
-  posts.forEach((post) => {
+  filtered.forEach((post) => {
     post.meta.tags.forEach((tag) => {
       tags.add(slug(tag));
     });
@@ -110,9 +114,11 @@ export const getTagPaths = async () => {
 export const getTagCounts = async () => {
   const posts = await getPosts();
 
+  const filtered = posts.filter((post) => !!post.meta.published);
+
   const counts = new Map<string, number>();
 
-  posts.forEach((post) => {
+  filtered.forEach((post) => {
     post.meta.tags.forEach((tag) => {
       counts.set(tag, counts.has(tag) ? counts.get(tag) + 1 : 1);
     });
