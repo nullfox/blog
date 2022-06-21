@@ -55,7 +55,7 @@ const theme = extendTheme({
         },
 
         p: {
-          pt: 6,
+          pt: 8,
         },
 
         'p code': {
@@ -68,7 +68,7 @@ const theme = extendTheme({
         'h1, h2, h3, h4, h5, h6': {
           fontWeight: '700',
           fontSize: 'xl',
-          pt: 8,
+          pt: 12,
         },
 
         h1: {
@@ -106,7 +106,7 @@ const theme = extendTheme({
           borderRadius: 6,
           borderWidth: 1,
           borderColor: 'border',
-          mt: 4,
+          mt: 8,
         },
 
         'blockquote > p': {
