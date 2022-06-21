@@ -14,9 +14,10 @@ interface RawMeta {
   date: Date;
   readingTime: number;
   featured?: boolean;
+  published?: boolean;
 }
 
-export interface Meta extends Omit<RawMeta, 'date'> {
+export interface Meta extends Omit<RawMeta, 'date' | 'published'> {
   date: string;
 }
 
@@ -66,6 +67,9 @@ export const getPosts = async () => {
 
   return posts
     .slice()
+    .filter(
+      (post) => post.meta.published === undefined || !!post.meta.published,
+    )
     .sort((a, b) => a.meta.date.valueOf() - b.meta.date.valueOf())
     .map((post) => ({
       ...post,
