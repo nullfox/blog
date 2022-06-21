@@ -1,4 +1,4 @@
-type Post = import('./services/').Post;
+type Post = import('./services/content').Post;
 
 interface PageProps {
   posts: Post[];

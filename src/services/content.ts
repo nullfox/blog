@@ -19,6 +19,7 @@ interface RawMeta {
 
 export interface Meta extends Omit<RawMeta, 'date' | 'published'> {
   date: string;
+  published: boolean;
 }
 
 export interface Post<M = Meta> {
@@ -60,25 +61,28 @@ export const getPost = async (slug: string): Promise<Post<RawMeta>> => {
   };
 };
 
-export const getPosts = async () => {
+export const getPosts = async (): Promise<Post[]> => {
   const slugs = await getPostPaths();
 
   const posts = await Promise.all(slugs.map((slug) => getPost(slug)));
 
-  return posts
-    .slice()
-    .filter(
+  return (
+    posts
+      .slice()
+      /* .filter(
       (post) => post.meta.published === undefined || !!post.meta.published,
-    )
-    .sort((a, b) => a.meta.date.valueOf() - b.meta.date.valueOf())
-    .map((post) => ({
-      ...post,
-      meta: {
-        ...post.meta,
-        readingTime: Math.round(readingTime(post.content).minutes),
-        date: post.meta.date.toISOString(),
-      },
-    }));
+    ) */
+      .sort((a, b) => a.meta.date.valueOf() - b.meta.date.valueOf())
+      .map((post) => ({
+        ...post,
+        meta: {
+          ...post.meta,
+          readingTime: Math.round(readingTime(post.content).minutes),
+          date: post.meta.date.toISOString(),
+          published: post.meta.published || true,
+        },
+      }))
+  );
 };
 
 export const getFeaturedPost = async () => {

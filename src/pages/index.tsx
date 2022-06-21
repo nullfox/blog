@@ -3,6 +3,7 @@ import { Box, Icon, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 import { FiFrown } from 'react-icons/fi';
 
 import { ArticleJsonLd, NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 
 import CollectionPost from '../components/CollectionPost';
 import Content from '../components/Content';
@@ -15,8 +16,12 @@ import {
 } from '../services/content';
 
 const Index = ({ posts, featuredPost, tagCounts }: PageProps) => {
+  const { query } = useRouter();
+
   const latest = posts[0];
-  const rest = posts.slice(1);
+  const rest = query.unpublished
+    ? posts.slice(1)
+    : posts.slice(1).filter((post) => !!post.meta.published);
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>

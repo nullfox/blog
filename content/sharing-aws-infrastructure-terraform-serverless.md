@@ -7,7 +7,7 @@ tags:
   - AWS
   - Serverless
 date: 2022-06-20
-published: true
+published: false
 ---
 
 > Serverless lets us easily write and deploy functions in AWS Lambda, but how do we leverage AWS services like RDS, SQS and ElastiCache managed by Terraform?
