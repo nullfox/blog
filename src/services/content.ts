@@ -92,7 +92,7 @@ export const getFeaturedPost = async () => {
     return featured;
   }
 
-  return posts[0];
+  return posts.filter((post) => !!post.meta.published)[0];
 };
 
 export const getTagPaths = async () => {
