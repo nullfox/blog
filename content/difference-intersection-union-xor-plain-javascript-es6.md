@@ -6,6 +6,7 @@ tags:
   - Javascript
   - TypeScript
 date: 2022-06-18
+featured: true
 ---
 
 > It's easy to pull in `lodash` for javascript array operations, but here are a few quick hits that give the same results - without yet another dependency!
