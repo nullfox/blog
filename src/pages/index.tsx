@@ -18,10 +18,12 @@ import {
 const Index = ({ posts, featuredPost, tagCounts }: PageProps) => {
   const { query } = useRouter();
 
-  const latest = posts[0];
-  const rest = query.unpublished
-    ? posts.slice(1)
-    : posts.slice(1).filter((post) => !!post.meta.published);
+  const filtered = query.unpublished
+    ? posts
+    : posts.filter((post) => !!post.meta.published);
+
+  const latest = filtered[0];
+  const rest = filtered.slice(1);
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>

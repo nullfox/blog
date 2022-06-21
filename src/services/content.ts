@@ -66,23 +66,19 @@ export const getPosts = async (): Promise<Post[]> => {
 
   const posts = await Promise.all(slugs.map((slug) => getPost(slug)));
 
-  return (
-    posts
-      .slice()
-      /* .filter(
-      (post) => post.meta.published === undefined || !!post.meta.published,
-    ) */
-      .sort((a, b) => a.meta.date.valueOf() - b.meta.date.valueOf())
-      .map((post) => ({
-        ...post,
-        meta: {
-          ...post.meta,
-          readingTime: Math.round(readingTime(post.content).minutes),
-          date: post.meta.date.toISOString(),
-          published: post.meta.published || true,
-        },
-      }))
-  );
+  return posts
+    .slice()
+    .sort((a, b) => b.meta.date.valueOf() - a.meta.date.valueOf())
+    .map((post) => ({
+      ...post,
+      meta: {
+        ...post.meta,
+        readingTime: Math.round(readingTime(post.content).minutes),
+        date: post.meta.date.toISOString(),
+        published:
+          post.meta.published === undefined ? true : post.meta.published,
+      },
+    }));
 };
 
 export const getFeaturedPost = async () => {
@@ -143,14 +139,16 @@ export const generateSitemap = async () => {
   const posts = await getPosts();
   const siteURL = 'https://nullfox.com';
 
+  const filtered = posts.filter((post) => !!post.meta.published);
+
   let xml =
     '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
   xml = `${xml}<url><loc>https://www.nullfox.com</loc><lastmod>${
-    posts[0].meta.date.split('T')[0]
+    filtered[0].meta.date.split('T')[0]
   }</lastmod></url>`;
 
-  posts.forEach((post) => {
+  filtered.forEach((post) => {
     const url = `${siteURL}/${post.slug}`;
     const lastmod = post.meta.date.split('T')[0];
 
@@ -166,6 +164,8 @@ export const generateRssFeeds = async () => {
   const posts = await getPosts();
   const siteURL = 'https://nullfox.com';
   const date = new Date();
+
+  const filtered = posts.filter((post) => !!post.meta.published);
 
   const author = {
     name: 'Ben Fox',
@@ -191,7 +191,7 @@ export const generateRssFeeds = async () => {
     author,
   });
 
-  posts.forEach((post) => {
+  filtered.forEach((post) => {
     const url = `${siteURL}/${post.slug}`;
 
     const content = `<p><a href="${url}"><img src="${post.meta.image}" width="696"></a></p><p>${post.meta.description}</p>`;
