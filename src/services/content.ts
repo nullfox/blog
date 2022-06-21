@@ -131,6 +131,29 @@ export const getDefaultStaticProps = async () => {
   };
 };
 
+export const generateSitemap = async () => {
+  const posts = await getPosts();
+  const siteURL = 'https://nullfox.com';
+
+  let xml =
+    '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+
+  xml = `${xml}<url><loc>https://www.nullfox.com</loc><lastmod>${
+    posts[0].meta.date.split('T')[0]
+  }</lastmod></url>`;
+
+  posts.forEach((post) => {
+    const url = `${siteURL}/${post.slug}`;
+    const lastmod = post.meta.date.split('T')[0];
+
+    xml = `${xml}<url><loc>${url}</loc><lastmod>${lastmod}</lastmod></url>`;
+  });
+
+  xml = `${xml}</urlset>`;
+
+  await writeFile(join(process.cwd(), 'public', 'sitemap.xml'), xml);
+};
+
 export const generateRssFeeds = async () => {
   const posts = await getPosts();
   const siteURL = 'https://nullfox.com';

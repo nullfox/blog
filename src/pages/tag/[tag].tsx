@@ -5,18 +5,11 @@ import { NextSeo } from 'next-seo';
 import CollectionPost from '../../components/CollectionPost';
 import Content from '../../components/Content';
 import Primary from '../../layouts/Primary';
-import {
-  Post,
-  getDefaultStaticProps,
-  getTagPaths,
-} from '../../services/content';
+import { getDefaultStaticProps, getTagPaths } from '../../services/content';
 import { slug } from '../../services/text';
 
-interface TagProps {
+interface TagProps extends PageProps {
   tag: string;
-  posts: Post[];
-  featuredPost: Post;
-  tagCounts: Record<string, number>;
 }
 
 const Tag = ({ tag, posts, featuredPost, tagCounts }: TagProps) => {

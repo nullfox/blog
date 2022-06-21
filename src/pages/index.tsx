@@ -9,18 +9,12 @@ import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import Primary from '../layouts/Primary';
 import {
-  Post,
   generateRssFeeds,
+  generateSitemap,
   getDefaultStaticProps,
 } from '../services/content';
 
-interface IndexProps {
-  posts: Post[];
-  featuredPost: Post;
-  tagCounts: Record<string, number>;
-}
-
-const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
+const Index = ({ posts, featuredPost, tagCounts }: PageProps) => {
   const latest = posts[0];
   const rest = posts.slice(1);
 
@@ -78,6 +72,7 @@ const Index = ({ posts, featuredPost, tagCounts }: IndexProps) => {
 
 export async function getStaticProps() {
   await generateRssFeeds();
+  await generateSitemap();
 
   const props = await getDefaultStaticProps();
 

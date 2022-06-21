@@ -11,13 +11,10 @@ import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
-import { Post, getDefaultStaticProps, getPostPaths } from '../services/content';
+import { getDefaultStaticProps, getPostPaths } from '../services/content';
 
-interface SlugProps {
-  posts: Post[];
+interface SlugProps extends PageProps {
   post: Post;
-  featuredPost: Post;
-  tagCounts: Record<string, number>;
 }
 
 const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
