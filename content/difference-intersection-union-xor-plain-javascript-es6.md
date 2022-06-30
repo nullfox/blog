@@ -4,7 +4,7 @@ description: Skip lodash and up your game with 0 dependency solutions for array 
 image: /images/posts/card-deck.jpg
 tags:
   - Javascript
-  - TypeScript
+  - Typescript
 date: 2022-06-18
 featured: true
 ---
