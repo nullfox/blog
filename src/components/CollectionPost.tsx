@@ -12,7 +12,12 @@ interface CollectionPostProps {
 
 const CollectionPost = ({ post }: CollectionPostProps) => (
   <Box w="full">
-    <ZoomImage h="unset" image={post.meta.image} href={`/${post.slug}`} />
+    <ZoomImage
+      h="unset"
+      imageProps={{ h: '30vh' }}
+      image={post.meta.image}
+      href={`/${post.slug}`}
+    />
     <HStack w="full" my={4}>
       {post.meta.tags.map((tag, idx) => (
         <Tag key={tag} tag={tag} />
