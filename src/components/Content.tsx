@@ -9,9 +9,17 @@ interface ContentProps {
   children: ReactNode;
   featuredPost: Post;
   tagCounts: Record<string, number>;
+  sidebarBeforeChildren?: ReactNode;
+  sidebarAfterChildren?: ReactNode;
 }
 
-const Content = ({ children, featuredPost, tagCounts }: ContentProps) => (
+const Content = ({
+  children,
+  featuredPost,
+  tagCounts,
+  sidebarBeforeChildren,
+  sidebarAfterChildren,
+}: ContentProps) => (
   <Flex flexWrap="wrap" w="full" py={16} justifyContent="space-between">
     <Box w={{ base: 'full', lg: '70%' }} px={{ base: '5%', lg: 0 }} order={0}>
       {children}
@@ -23,8 +31,10 @@ const Content = ({ children, featuredPost, tagCounts }: ContentProps) => (
       order={1}
     >
       <VStack w="full" alignItems="flex-start" spacing={8}>
+        {sidebarBeforeChildren}
         <FeaturedPost post={featuredPost} />
         <Topics tagCounts={tagCounts} />
+        {sidebarAfterChildren}
       </VStack>
     </Box>
   </Flex>
