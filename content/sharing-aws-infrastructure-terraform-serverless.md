@@ -1,6 +1,6 @@
 ---
 title: Sharing AWS Infrastructure with Terraform and Serverless
-description: Deploying and leveraging shared AWS infrastructure managed by Terraform in Serverless
+excerpt: Deploying and leveraging shared AWS infrastructure managed by Terraform in Serverless
 image: /images/posts/pipes.jpg
 tags:
   - Terraform

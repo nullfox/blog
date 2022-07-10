@@ -1,6 +1,6 @@
 ---
 title: Next.js, React and shared component monorepo with Lerna, Typescript, ESLint & Prettier
-description: Deploying and leveraging shared AWS infrastructure managed by Terraform in Serverless
+excerpt: Deploying and leveraging shared AWS infrastructure managed by Terraform in Serverless
 image: /images/posts/lerna.png
 tags:
   - Typescript

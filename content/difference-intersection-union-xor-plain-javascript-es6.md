@@ -1,6 +1,6 @@
 ---
 title: Implementing difference, intersection, union and xor in ES6 javascript
-description: Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & union-ing
+excerpt: Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & union-ing
 image: /images/posts/card-deck.jpg
 tags:
   - Javascript

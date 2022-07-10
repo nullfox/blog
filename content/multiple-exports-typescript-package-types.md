@@ -1,6 +1,6 @@
 ---
 title: Multiple exports with types in a Typescript Package
-description: Supporting multiple exports with full type declarations in a Typescript package isn't always straightforward.
+excerpt: Supporting multiple exports with full type declarations in a Typescript package isn't always straightforward.
 image: /images/posts/types.jpg
 tags:
   - Typescript
