@@ -13,7 +13,6 @@ import {
 
 import NextLink from 'next/link';
 
-import { Post } from '../services/content';
 import Tag from './Tag';
 import ZoomImage from './ZoomImage';
 
@@ -74,9 +73,7 @@ const FeaturedPost = ({
           </Heading>
         )}
 
-        <Text fontSize={{ base: 'sm', lg: 'md ' }}>
-          {post.meta.description}
-        </Text>
+        <Text fontSize={{ base: 'sm', lg: 'md ' }}>{post.meta.excerpt}</Text>
 
         {children}
       </VStack>

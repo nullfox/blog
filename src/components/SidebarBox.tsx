@@ -11,10 +11,9 @@ import {
   Text,
 } from '@chakra-ui/react';
 
+import { sluggify } from '@nullfox/nextjs-blog';
 import NextLink from 'next/link';
 
-import { Post } from '../services/content';
-import { slug } from '../services/text';
 import ZoomImage from './ZoomImage';
 
 interface SidebarBoxProps {
@@ -85,7 +84,7 @@ export const Topics = ({ tagCounts }: TopicsProps) => (
     {Object.keys(tagCounts)
       .sort((a, b) => (tagCounts[a] > tagCounts[b] ? -1 : 1))
       .map((tag, idx) => (
-        <NextLink key={tag} href={`/tag/${slug(tag)}`} passHref>
+        <NextLink key={tag} href={`/tag/${sluggify(tag)}`} passHref>
           <Link>
             <Flex
               justifyContent="space-between"

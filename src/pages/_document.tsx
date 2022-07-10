@@ -7,6 +7,7 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head>
+          <link rel="stylesheet" href="/css/syntax.css"></link>
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-06MZCKWRQ9"

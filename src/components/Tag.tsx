@@ -1,15 +1,14 @@
 import { Badge, Link } from '@chakra-ui/react';
 
+import { sluggify } from '@nullfox/nextjs-blog';
 import NextLink from 'next/link';
-
-import { slug } from '../services/text';
 
 interface TagProps {
   tag: string;
 }
 
 const Tag = ({ tag }: TagProps) => (
-  <NextLink key={tag} href={`/tag/${slug(tag)}`} passHref>
+  <NextLink key={tag} href={`/tag/${sluggify(tag)}`} passHref>
     <Link>
       <Badge
         boxShadow="inset 0 0 0px 1px var(--chakra-colors-themeGray-500)"

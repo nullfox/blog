@@ -16,8 +16,6 @@ import {
 
 import { BiSearch, BiX } from 'react-icons/bi';
 
-import { Post } from '../services/content';
-
 interface SearchProps {
   tags: string[];
   onSearch: (query: string) => Post[];
@@ -184,7 +182,7 @@ const Search = ({ tags, onSearch, onClose, onClickPost }: SearchProps) => {
                       color="themeGray.500"
                       mt={2}
                     >
-                      {result.meta.description}
+                      {result.meta.excerpt}
                     </Text>
                   </Box>
                 </Flex>

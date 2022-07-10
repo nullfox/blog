@@ -1,7 +1,7 @@
-type Post = import('./services/content').Post;
+type Post = import('@nullfox/nextjs-blog').Post;
 
 interface PageProps {
   posts: Post[];
-  featuredPost: Post;
+  featuredPosts: Post[];
   tagCounts: Record<string, number>;
 }

@@ -1,60 +1,24 @@
-import { useState } from 'react';
-
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  HStack,
-  Heading,
-  Icon,
-  Input,
-  Text,
-  Textarea,
-  VStack,
-} from '@chakra-ui/react';
+import { Box, HStack, Heading, Text, VStack } from '@chakra-ui/react';
 
 import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import { FiSmile } from 'react-icons/fi';
 
-import axios from 'axios';
-import { NextSeo } from 'next-seo';
+import { PageSeo } from '@nullfox/nextjs-blog';
+import { getPageStaticProps } from '@nullfox/nextjs-blog/content';
+import { GetStaticProps } from 'next';
 
 import Content from '../components/Content';
 import SidebarBox from '../components/SidebarBox';
 import SocialButton from '../components/SocialButton';
-import ZoomImage from '../components/ZoomImage';
 import Primary from '../layouts/Primary';
-import { Post, getDefaultStaticProps } from '../services/content';
 
-interface AboutProps {
-  posts: Post[];
-  featuredPost: Post;
-  tagCounts: Record<string, number>;
-}
-
-const About = ({ posts, featuredPost, tagCounts }: AboutProps) => {
+const About = ({ posts, featuredPosts, tagCounts }: PageProps) => {
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
-      <NextSeo
-        title="About Javascript Consultant & Web Application Developer"
-        description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
-        openGraph={{
-          url: 'https://www.nullfox.com',
-          title: 'About Javascript Consultant & Web Application Developer',
-          description:
-            'Ben Fox blogging about TypeScript, open source, web application development and the cloud.',
-          images: [{ url: 'https://www.nullfox.com/images/logo.png' }],
-        }}
-      />
+      <PageSeo title="About Javascript Consultant & Web Application Developer" />
 
       <Content
         tagCounts={tagCounts}
-        featuredPost={featuredPost}
+        featuredPost={featuredPosts[0]}
         sidebarBeforeChildren={
           <SidebarBox title="On Social Media">
             <HStack mt={4} justifyContent="center">
@@ -138,12 +102,7 @@ const About = ({ posts, featuredPost, tagCounts }: AboutProps) => {
   );
 };
 
-export async function getStaticProps() {
-  const props = await getDefaultStaticProps();
-
-  return {
-    props,
-  };
-}
+export const getStaticProps: GetStaticProps = async () =>
+  getPageStaticProps({});
 
 export default About;

@@ -1,23 +1,24 @@
 import { Box, HStack, useToast } from '@chakra-ui/react';
 
 import { FaCopy, FaFacebook, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import ReactMarkdown from 'react-markdown';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { agate } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
-import { ArticleJsonLd, NextSeo } from 'next-seo';
+import { PostRenderer } from '@nullfox/nextjs-blog';
+import {
+  getPageStaticProps,
+  getPostStaticPaths,
+} from '@nullfox/nextjs-blog/content';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
-import { getDefaultStaticProps, getPostPaths } from '../services/content';
 
 interface SlugProps extends PageProps {
   post: Post;
 }
 
-const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
+const Slug = ({ post, featuredPosts, posts, tagCounts }: SlugProps) => {
   const toast = useToast();
 
   if (!post) {
@@ -78,29 +79,6 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
-      <NextSeo
-        title={post.meta.title}
-        description={post.meta.description}
-        openGraph={{
-          url,
-          title: post.meta.title,
-          description: post.meta.description,
-          images: [{ url: post.meta.image }],
-        }}
-      />
-
-      <ArticleJsonLd
-        url={url}
-        title={post.meta.title}
-        images={[post.meta.image]}
-        datePublished={post.meta.date}
-        dateModified={post.meta.date}
-        authorName={['Ben Fox']}
-        publisherName="Ben Fox"
-        publisherLogo="https://www.nullfox.com/image/logo.png"
-        description={post.meta.description}
-      />
-
       <Box pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
         <FeaturedPost post={post} linkTitle={false}>
           <HStack w="full" pt={6}>
@@ -128,8 +106,12 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
         </FeaturedPost>
       </Box>
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPost}>
-        <ReactMarkdown
+      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
+        <Box className="content-md" w="full">
+          <PostRenderer post={post} />
+        </Box>
+
+        {/* <ReactMarkdown
           className="content-md"
           children={post.content}
           components={{
@@ -154,35 +136,14 @@ const Slug = ({ post, featuredPost, posts, tagCounts }: SlugProps) => {
               );
             },
           }}
-        />
+        /> */}
       </Content>
     </Primary>
   );
 };
 
-export async function getStaticPaths() {
-  const postPaths = await getPostPaths();
-
-  return {
-    paths: postPaths.map((slug) => ({
-      params: {
-        slug,
-      },
-    })),
-    fallback: true,
-  };
-}
-
-export async function getStaticProps({ params: { slug } }) {
-  const props = await getDefaultStaticProps();
-  const post = props.posts.find((post) => post.slug === slug);
-
-  return {
-    props: {
-      post,
-      ...props,
-    },
-  };
-}
+export const getStaticPaths: GetStaticPaths = getPostStaticPaths;
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) =>
+  getPageStaticProps({ slug: [].concat(slug).shift() });
 
 export default Slug;

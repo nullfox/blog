@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 
 import { Box, Flex, VStack } from '@chakra-ui/react';
 
-import { Post } from '../services/content';
 import { FeaturedPost, Topics } from './SidebarBox';
 
 interface ContentProps {

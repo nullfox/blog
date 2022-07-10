@@ -21,21 +21,16 @@ import {
 import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FiSmile } from 'react-icons/fi';
 
+import { PageSeo } from '@nullfox/nextjs-blog';
+import { getPageStaticProps } from '@nullfox/nextjs-blog/content';
 import axios from 'axios';
-import { NextSeo } from 'next-seo';
+import { GetStaticProps } from 'next';
 
 import Content from '../components/Content';
 import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
-import { Post, getDefaultStaticProps } from '../services/content';
 
-interface ContactProps {
-  posts: Post[];
-  featuredPost: Post;
-  tagCounts: Record<string, number>;
-}
-
-const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
+const Contact = ({ posts, featuredPosts, tagCounts }: PageProps) => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -100,19 +95,9 @@ const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
-      <NextSeo
-        title="Contact Javascript Consultant & Web Application Developer"
-        description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
-        openGraph={{
-          url: 'https://www.nullfox.com',
-          title: 'Contact Javascript Consultant & Web Application Developer',
-          description:
-            'Ben Fox blogging about TypeScript, open source, web application development and the cloud.',
-          images: [{ url: 'https://www.nullfox.com/images/logo.png' }],
-        }}
-      />
+      <PageSeo title="Contact Javascript Consultant & Web Application Developer" />
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPost}>
+      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
         <Heading fontWeight="800" fontSize="3xl">
           Come say hello!
         </Heading>
@@ -229,12 +214,7 @@ const Contact = ({ posts, featuredPost, tagCounts }: ContactProps) => {
   );
 };
 
-export async function getStaticProps() {
-  const props = await getDefaultStaticProps();
-
-  return {
-    props,
-  };
-}
+export const getStaticProps: GetStaticProps = async () =>
+  getPageStaticProps({});
 
 export default Contact;

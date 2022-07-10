@@ -2,7 +2,6 @@ import { Box, HStack, Heading, Image, Link, Text } from '@chakra-ui/react';
 
 import NextLink from 'next/link';
 
-import { Post } from '../services/content';
 import Tag from './Tag';
 import ZoomImage from './ZoomImage';
 

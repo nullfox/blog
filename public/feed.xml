@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Ben Fox's Blog</title>
+        <link>http://localhost:3000</link>
+        <description>Tips, tricks and guides for TypeScript, web application development and the cloud</description>
+        <lastBuildDate>Sat, 09 Jul 2022 20:24:22 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>NextJS-Blog &amp; Feed for Node.js</generator>
+        <image>
+            <title>Ben Fox's Blog</title>
+            <url>http://localhost:3000/images/logo.png</url>
+            <link>http://localhost:3000</link>
+        </image>
+        <copyright>All rights reserved 2022</copyright>
+        <item>
+            <title><![CDATA[Implementing difference, intersection, union and xor in ES6 javascript]]></title>
+            <link>http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6</link>
+            <guid>http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6</guid>
+            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p>
+      <a href="http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6">
+        <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></description>
+            <content:encoded><![CDATA[<p>
+      <a href="http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6">
+        <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>

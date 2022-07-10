@@ -1,33 +1,28 @@
 import { Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
-import { NextSeo } from 'next-seo';
+import { PageSeo } from '@nullfox/nextjs-blog';
+import {
+  getPageStaticProps,
+  getTagStaticPaths,
+} from '@nullfox/nextjs-blog/content';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 import CollectionPost from '../../components/CollectionPost';
 import Content from '../../components/Content';
 import Primary from '../../layouts/Primary';
-import { getDefaultStaticProps, getTagPaths } from '../../services/content';
-import { slug } from '../../services/text';
 
 interface TagProps extends PageProps {
   tag: string;
 }
 
-const Tag = ({ tag, posts, featuredPost, tagCounts }: TagProps) => {
+const Tag = ({ tag, posts, featuredPosts, tagCounts }: TagProps) => {
   if (!tag) {
     return null;
   }
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
-      <NextSeo
-        title={`${tag} Posts`}
-        description={`Posts tagged ${tag}`}
-        openGraph={{
-          url: `https://www.nullfox.com/tag/${tag}`,
-          title: `${tag} Posts`,
-          description: `Posts tagged ${tag}`,
-        }}
-      />
+      <PageSeo title={`${tag} Posts`} description={`Posts tagged ${tag}`} />
 
       <Flex
         w="full"
@@ -43,7 +38,7 @@ const Tag = ({ tag, posts, featuredPost, tagCounts }: TagProps) => {
         </Heading>
       </Flex>
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPost}>
+      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
         <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={16}>
           {(posts || []).map((item) => (
             <CollectionPost key={item.slug} post={item} />
@@ -54,31 +49,8 @@ const Tag = ({ tag, posts, featuredPost, tagCounts }: TagProps) => {
   );
 };
 
-export async function getStaticPaths() {
-  const tagPaths = await getTagPaths();
-
-  return {
-    paths: tagPaths.map((tag) => ({
-      params: {
-        tag,
-      },
-    })),
-    fallback: true,
-  };
-}
-
-export async function getStaticProps({ params: { tag } }) {
-  const props = await getDefaultStaticProps();
-
-  return {
-    props: {
-      tag,
-      ...props,
-      posts: props.posts.filter((post) =>
-        post.meta.tags.map((t) => slug(t)).includes(tag),
-      ),
-    },
-  };
-}
+export const getStaticPaths: GetStaticPaths = getTagStaticPaths;
+export const getStaticProps: GetStaticProps = async ({ params: { tag } }) =>
+  getPageStaticProps({ tag: [].concat(tag).shift() }, { tag });
 
 export default Tag;

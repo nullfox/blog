@@ -8,7 +8,7 @@ import '@fontsource/poppins/500.css';
 import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 import '@fontsource/poppins/800.css';
-import { DefaultSeo } from 'next-seo';
+import { SiteSeo, configure } from '@nullfox/nextjs-blog';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -18,6 +18,34 @@ import theme from '../theme';
 type AppWindow = typeof window & {
   gtag: (t: string, id: string, opts?: Record<string, any>) => void;
 };
+
+configure({
+  site: {
+    hostname: 'http://localhost:3000',
+    title: "Ben Fox's Blog",
+    description:
+      'Tips, tricks and guides for TypeScript, web application development and the cloud',
+    image: 'http://localhost:3000/images/logo.png',
+  },
+  defaultAuthor: 'Ben Fox',
+  authors: [
+    {
+      name: 'Ben Fox',
+      twitter: '@thenullfox',
+      linkedin: 'nullfox',
+    },
+  ],
+  content: {
+    paths: {
+      content: './content',
+      assets: './public',
+    },
+    mdx: {
+      rehype: ['rehype-highlight'],
+    },
+  },
+  rss: true,
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -39,20 +67,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head>
         <link rel="shortcut icon" href="/images/logo.png" />
       </Head>
-      <DefaultSeo
-        titleTemplate="%s | Ben Fox's Blog"
-        openGraph={{
-          type: 'website',
-          locale: 'en_US',
-          url: 'https://www.nullfox.com/',
-          site_name: "Ben Fox's Blog",
-        }}
-        twitter={{
-          handle: '@thenullfox',
-          site: '@thenullfox',
-          cardType: 'summary',
-        }}
-      />
+      <SiteSeo />
       <Component {...pageProps} />
     </ChakraProvider>
   );

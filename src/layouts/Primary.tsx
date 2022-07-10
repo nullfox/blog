@@ -21,7 +21,6 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
 import Search from '../components/Search';
-import { Post } from '../services/content';
 
 interface PrimaryProps {
   children: ReactNode;
@@ -125,7 +124,7 @@ const Primary = ({ children, posts, tags }: PrimaryProps) => {
           variant="ghost"
           size="md"
           icon={<BiRss />}
-          onClick={() => window.open('/rss/atom.xml', '_blank')}
+          onClick={() => window.open('/atom.xml', '_blank')}
           _hover={{
             bg: 'transparent',
             color: 'primary',

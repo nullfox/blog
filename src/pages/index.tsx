@@ -2,20 +2,20 @@ import { Box, Icon, SimpleGrid, Text, VStack } from '@chakra-ui/react';
 
 import { FiFrown } from 'react-icons/fi';
 
-import { ArticleJsonLd, NextSeo } from 'next-seo';
+import { PageSeo } from '@nullfox/nextjs-blog';
+import {
+  generateRssFeeds,
+  generateSitemap,
+  getAllContent,
+} from '@nullfox/nextjs-blog/content';
 import { useRouter } from 'next/router';
 
 import CollectionPost from '../components/CollectionPost';
 import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import Primary from '../layouts/Primary';
-import {
-  generateRssFeeds,
-  generateSitemap,
-  getDefaultStaticProps,
-} from '../services/content';
 
-const Index = ({ posts, featuredPost, tagCounts }: PageProps) => {
+const Index = ({ posts, featuredPosts, tagCounts }: PageProps) => {
   const { query } = useRouter();
 
   const filtered = query.unpublished
@@ -27,35 +27,13 @@ const Index = ({ posts, featuredPost, tagCounts }: PageProps) => {
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
-      <NextSeo
-        title="Javascript Consultant, TypeScript Consultant, Web Application Developer"
-        description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
-        openGraph={{
-          url: 'https://www.nullfox.com',
-          title:
-            'Javascript Consultant, TypeScript Consultant, Web Application Developer',
-          description:
-            'Ben Fox blogging about TypeScript, open source, web application development and the cloud.',
-          images: [{ url: 'https://www.nullfox.com/images/logo.png' }],
-        }}
-      />
-
-      <ArticleJsonLd
-        type="Blog"
-        url="https://www.nullfox.com"
-        title="Ben Fox's Blog"
-        images={['https://www.nullfox.com/images/logo.png']}
-        datePublished={latest.meta.date}
-        dateModified={latest.meta.date}
-        authorName="Ben Fox"
-        description="Ben Fox blogging about TypeScript, open source, web application development and the cloud."
-      />
+      <PageSeo modifiedAt={new Date(latest.meta.date)} />
 
       <Box w="full" pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
         <FeaturedPost post={latest} />
       </Box>
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPost}>
+      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
         {rest.length > 0 && (
           <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={46}>
             {rest.map((item) => (
@@ -81,7 +59,7 @@ export async function getStaticProps() {
   await generateRssFeeds();
   await generateSitemap();
 
-  const props = await getDefaultStaticProps();
+  const props = await getAllContent();
 
   return {
     props,

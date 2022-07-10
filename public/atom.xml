@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://localhost:3000</id>
+    <title>Ben Fox's Blog</title>
+    <updated>2022-07-09T20:24:22.447Z</updated>
+    <generator>NextJS-Blog &amp; Feed for Node.js</generator>
+    <link rel="alternate" href="http://localhost:3000"/>
+    <link rel="self" href="http://localhost:3000/rss/atom.xml"/>
+    <subtitle>Tips, tricks and guides for TypeScript, web application development and the cloud</subtitle>
+    <logo>http://localhost:3000/images/logo.png</logo>
+    <icon>http://localhost:3000/images/logo.png</icon>
+    <rights>All rights reserved 2022</rights>
+    <entry>
+        <title type="html"><![CDATA[Implementing difference, intersection, union and xor in ES6 javascript]]></title>
+        <id>http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6</id>
+        <link href="http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6"/>
+        <updated>2022-06-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>
+      <a href="http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6">
+        <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></summary>
+        <content type="html"><![CDATA[<p>
+      <a href="http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6">
+        <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></content>
+    </entry>
+</feed>
