@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nullfox.com</id>
     <title>Ben Fox's Blog</title>
-    <updated>2022-07-10T03:22:20.142Z</updated>
+    <updated>2022-07-10T05:58:45.096Z</updated>
     <generator>NextJS-Blog &amp; Feed for Node.js</generator>
     <link rel="alternate" href="https://nullfox.com"/>
     <link rel="self" href="https://nullfox.com/rss/atom.xml"/>

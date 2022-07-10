@@ -8,7 +8,6 @@ import {
   generateSitemap,
   getAllContent,
 } from '@nullfox/nextjs-blog/content';
-import { useRouter } from 'next/router';
 
 import CollectionPost from '../components/CollectionPost';
 import Content from '../components/Content';
@@ -16,14 +15,8 @@ import FeaturedPost from '../components/FeaturedPost';
 import Primary from '../layouts/Primary';
 
 const Index = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
-  const { query } = useRouter();
-
-  const filtered = query.unpublished
-    ? posts
-    : posts.filter((post) => !!post.meta.published);
-
-  const latest = filtered[0];
-  const rest = filtered.slice(1);
+  const latest = posts[0];
+  const rest = posts.slice(1);
 
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
