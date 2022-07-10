@@ -1,14 +1,10 @@
-import { Box, HStack, Heading, Text, VStack } from '@chakra-ui/react';
-
-import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 
 import { PageSeo } from '@nullfox/nextjs-blog';
 import { getPageStaticProps } from '@nullfox/nextjs-blog/content';
 import { GetStaticProps } from 'next';
 
 import Content from '../components/Content';
-import SidebarBox from '../components/SidebarBox';
-import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
 
 const About = ({ posts, featuredPosts, tagCounts }: PageProps) => {
@@ -16,30 +12,7 @@ const About = ({ posts, featuredPosts, tagCounts }: PageProps) => {
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
       <PageSeo title="About Javascript Consultant & Web Application Developer" />
 
-      <Content
-        tagCounts={tagCounts}
-        featuredPost={featuredPosts[0]}
-        sidebarBeforeChildren={
-          <SidebarBox title="On Social Media">
-            <HStack mt={4} justifyContent="center">
-              <SocialButton
-                w="25%"
-                icon={FaTwitter}
-                onClick={() =>
-                  window.open('https://twitter.com/thenullfox', '_blank')
-                }
-              />
-              <SocialButton
-                w="25%"
-                icon={FaLinkedinIn}
-                onClick={() =>
-                  window.open('https://www.linkedin.com/in/nullfox', '_blank')
-                }
-              />
-            </HStack>
-          </SidebarBox>
-        }
-      >
+      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
         <Box
           borderRadius={4}
           bgImage="linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(/images/about.jpg)"
