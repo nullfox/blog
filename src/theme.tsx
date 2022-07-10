@@ -58,7 +58,7 @@ const theme = extendTheme({
           pt: 8,
         },
 
-        'p code': {
+        'p code, li code': {
           bg: 'themeGray.200',
           color: '#4bb1a7', // 'themeGray.800',
           px: 2,

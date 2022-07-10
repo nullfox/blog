@@ -13,6 +13,14 @@
             "title": "Implementing difference, intersection, union and xor in ES6 javascript",
             "summary": "<p>\n      <a href=\"https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6\">\n        <img src=\"/images/posts/card-deck.jpg\" width=\"696\">\n      </a>\n    </p>\n    <p>\n      undefined\n    </p>",
             "date_modified": "2022-06-18T00:00:00.000Z"
+        },
+        {
+            "id": "https://nullfox.com/multiple-exports-typescript-package-types",
+            "content_html": "<p>\n      <a href=\"https://nullfox.com/multiple-exports-typescript-package-types\">\n        <img src=\"/images/posts/types.jpg\" width=\"696\">\n      </a>\n    </p>\n    <p>\n      undefined\n    </p>",
+            "url": "https://nullfox.com/multiple-exports-typescript-package-types",
+            "title": "Multiple exports with types in a Typescript Package",
+            "summary": "<p>\n      <a href=\"https://nullfox.com/multiple-exports-typescript-package-types\">\n        <img src=\"/images/posts/types.jpg\" width=\"696\">\n      </a>\n    </p>\n    <p>\n      undefined\n    </p>",
+            "date_modified": "2022-07-09T00:00:00.000Z"
         }
     ]
 }

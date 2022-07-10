@@ -4,7 +4,7 @@
         <title>Ben Fox's Blog</title>
         <link>https://nullfox.com</link>
         <description>Tips, tricks and guides for TypeScript, web application development and the cloud</description>
-        <lastBuildDate>Sun, 10 Jul 2022 01:35:48 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Jul 2022 03:22:20 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>NextJS-Blog &amp; Feed for Node.js</generator>
         <image>
@@ -29,6 +29,28 @@
             <content:encoded><![CDATA[<p>
       <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
         <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Multiple exports with types in a Typescript Package]]></title>
+            <link>https://nullfox.com/multiple-exports-typescript-package-types</link>
+            <guid>https://nullfox.com/multiple-exports-typescript-package-types</guid>
+            <pubDate>Sat, 09 Jul 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p>
+      <a href="https://nullfox.com/multiple-exports-typescript-package-types">
+        <img src="/images/posts/types.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></description>
+            <content:encoded><![CDATA[<p>
+      <a href="https://nullfox.com/multiple-exports-typescript-package-types">
+        <img src="/images/posts/types.jpg" width="696">
       </a>
     </p>
     <p>

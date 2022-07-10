@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nullfox.com</id>
     <title>Ben Fox's Blog</title>
-    <updated>2022-07-10T01:35:48.699Z</updated>
+    <updated>2022-07-10T03:22:20.142Z</updated>
     <generator>NextJS-Blog &amp; Feed for Node.js</generator>
     <link rel="alternate" href="https://nullfox.com"/>
     <link rel="self" href="https://nullfox.com/rss/atom.xml"/>
@@ -26,6 +26,28 @@
         <content type="html"><![CDATA[<p>
       <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
         <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Multiple exports with types in a Typescript Package]]></title>
+        <id>https://nullfox.com/multiple-exports-typescript-package-types</id>
+        <link href="https://nullfox.com/multiple-exports-typescript-package-types"/>
+        <updated>2022-07-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>
+      <a href="https://nullfox.com/multiple-exports-typescript-package-types">
+        <img src="/images/posts/types.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      undefined
+    </p>]]></summary>
+        <content type="html"><![CDATA[<p>
+      <a href="https://nullfox.com/multiple-exports-typescript-package-types">
+        <img src="/images/posts/types.jpg" width="696">
       </a>
     </p>
     <p>
