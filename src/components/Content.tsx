@@ -9,7 +9,7 @@ import SocialButton from './SocialButton';
 
 interface ContentProps {
   children: ReactNode;
-  featuredPost: Post;
+  featuredPost: RawPost;
   tagCounts: Record<string, number>;
   author: Author;
   sidebarBeforeChildren?: ReactNode;

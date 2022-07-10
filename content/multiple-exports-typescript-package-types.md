@@ -15,7 +15,7 @@ You've mastered typescript basics, conquered generics and squashed overloads; bu
 
 To get started, let's look at the anatomy of a regular single export starting with our package's manifest.
 
-```json
+```json[class="line-numbers"]
 {
   "name": "my-typescript-module",
   "version": "1.0.0",
@@ -31,7 +31,7 @@ In the above example, the first 2 lines should look familiar with our modules na
 
 For a module with a single export, the above setup works great - upon requiring/importing we get type information and all is well. However, should you want to have multiple exports, we'll need to change up our `package.json` in a few ways shown in the example below.
 
-```json
+```json[class="line-numbers"]
 {
   "name": "my-typescript-module",
   "version": "1.0.0",

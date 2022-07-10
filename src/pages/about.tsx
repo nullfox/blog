@@ -1,15 +1,20 @@
 import { Box, Heading, Text, VStack } from '@chakra-ui/react';
 
 import { PageSeo } from '@nullfox/nextjs-blog';
-import { getPageStaticProps } from '@nullfox/nextjs-blog/content';
+import { getAllContent } from '@nullfox/nextjs-blog/content';
 import { GetStaticProps } from 'next';
 
 import Content from '../components/Content';
 import Primary from '../layouts/Primary';
 
-const About = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
+const About = ({
+  searchPosts,
+  featuredPosts,
+  tagCounts,
+  author,
+}: PageProps) => {
   return (
-    <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
+    <Primary posts={searchPosts} tags={Object.keys(tagCounts || {})}>
       <PageSeo title="About Javascript Consultant & Web Application Developer" />
 
       <Content
@@ -79,7 +84,20 @@ const About = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () =>
-  getPageStaticProps({});
+export const getStaticProps: GetStaticProps<PageProps> = async () => {
+  const { posts, tagCounts, author, featuredPosts } = await getAllContent();
+
+  return {
+    props: {
+      tagCounts,
+      author,
+      featuredPosts,
+      searchPosts: posts.map((post) => ({
+        ...post.meta,
+        slug: post.slug,
+      })),
+    },
+  };
+};
 
 export default About;

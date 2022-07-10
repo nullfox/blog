@@ -4,8 +4,9 @@ import { FaCopy, FaFacebook, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 
 import { PostRenderer } from '@nullfox/nextjs-blog';
 import {
-  getPageStaticProps,
+  getAllContent,
   getPostStaticPaths,
+  serialize,
 } from '@nullfox/nextjs-blog/content';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -18,7 +19,13 @@ interface SlugProps extends PageProps {
   post: Post;
 }
 
-const Slug = ({ post, featuredPosts, posts, tagCounts, author }: SlugProps) => {
+const Slug = ({
+  post,
+  featuredPosts,
+  searchPosts,
+  tagCounts,
+  author,
+}: SlugProps) => {
   const toast = useToast();
 
   if (!post) {
@@ -78,7 +85,7 @@ const Slug = ({ post, featuredPosts, posts, tagCounts, author }: SlugProps) => {
   };
 
   return (
-    <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
+    <Primary posts={searchPosts} tags={Object.keys(tagCounts || {})}>
       <Box pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
         <FeaturedPost post={post} linkTitle={false}>
           <HStack w="full" pt={6}>
@@ -147,7 +154,39 @@ const Slug = ({ post, featuredPosts, posts, tagCounts, author }: SlugProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = getPostStaticPaths;
-export const getStaticProps: GetStaticProps = async ({ params: { slug } }) =>
-  getPageStaticProps({ slug: [].concat(slug).shift() });
+export const getStaticProps: GetStaticProps<SlugProps> = async ({
+  params: { slug },
+}) => {
+  const {
+    post: rawPost,
+    posts,
+    tagCounts,
+    author,
+    featuredPosts,
+  } = await getAllContent({ slug: [].concat(slug).shift() });
+
+  let post: Post | null = null;
+
+  if (rawPost) {
+    const serialized = await serialize(rawPost.content);
+    post = {
+      ...rawPost,
+      content: serialized,
+    };
+  }
+
+  return {
+    props: {
+      post: post || null,
+      tagCounts,
+      author,
+      featuredPosts,
+      searchPosts: posts.map((post) => ({
+        ...post.meta,
+        slug: post.slug,
+      })),
+    },
+  };
+};
 
 export default Slug;

@@ -18,14 +18,14 @@ import { BiSearch, BiX } from 'react-icons/bi';
 
 interface SearchProps {
   tags: string[];
-  onSearch: (query: string) => Post[];
+  onSearch: (query: string) => SearchPost[];
   onClose: () => void;
   onClickPost: (slug: string) => void;
 }
 
 const Search = ({ tags, onSearch, onClose, onClickPost }: SearchProps) => {
   const [query, setQuery] = useState<string>('');
-  const [results, setResults] = useState<Post[]>([]);
+  const [results, setResults] = useState<SearchPost[]>([]);
 
   return (
     <Box w="full">
@@ -168,13 +168,13 @@ const Search = ({ tags, onSearch, onClose, onClickPost }: SearchProps) => {
                     w={16}
                     h={16}
                     objectFit="cover"
-                    src={result.meta.image}
+                    src={result.image}
                     borderRadius={6}
                   />
 
                   <Box w="full" ml={6}>
                     <Text className="title" mt={1}>
-                      {result.slug}
+                      {result.title}
                     </Text>
                     <Text
                       fontSize="sm"
@@ -182,7 +182,7 @@ const Search = ({ tags, onSearch, onClose, onClickPost }: SearchProps) => {
                       color="themeGray.500"
                       mt={2}
                     >
-                      {result.meta.excerpt}
+                      {result.excerpt}
                     </Text>
                   </Box>
                 </Flex>

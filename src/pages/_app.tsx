@@ -12,6 +12,7 @@ import { SiteSeo, configure } from '@nullfox/nextjs-blog';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import remarkPrism from 'remark-prism';
 
 import theme from '../theme';
 
@@ -41,7 +42,7 @@ configure({
       assets: './public',
     },
     mdx: {
-      rehype: ['rehype-highlight'],
+      remark: [['remark-prism', { plugins: ['line-numbers'] }]],
     },
   },
   rss: true,

@@ -1,10 +1,7 @@
 import { Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
 import { PageSeo } from '@nullfox/nextjs-blog';
-import {
-  getPageStaticProps,
-  getTagStaticPaths,
-} from '@nullfox/nextjs-blog/content';
+import { getAllContent, getTagStaticPaths } from '@nullfox/nextjs-blog/content';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import CollectionPost from '../../components/CollectionPost';
@@ -12,16 +9,24 @@ import Content from '../../components/Content';
 import Primary from '../../layouts/Primary';
 
 interface TagProps extends PageProps {
+  posts: RawPost[];
   tag: string;
 }
 
-const Tag = ({ tag, posts, featuredPosts, tagCounts, author }: TagProps) => {
+const Tag = ({
+  tag,
+  posts,
+  searchPosts,
+  featuredPosts,
+  tagCounts,
+  author,
+}: TagProps) => {
   if (!tag) {
     return null;
   }
 
   return (
-    <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
+    <Primary posts={searchPosts} tags={Object.keys(tagCounts || {})}>
       <PageSeo title={`${tag} Posts`} description={`Posts tagged ${tag}`} />
 
       <Flex
@@ -54,7 +59,28 @@ const Tag = ({ tag, posts, featuredPosts, tagCounts, author }: TagProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = getTagStaticPaths;
-export const getStaticProps: GetStaticProps = async ({ params: { tag } }) =>
-  getPageStaticProps({ tag: [].concat(tag).shift() }, { tag });
+export const getStaticProps: GetStaticProps<TagProps> = async ({
+  params: { tag },
+}) => {
+  const actualTag = [].concat(tag).shift();
+
+  const { posts, tagCounts, author, featuredPosts } = await getAllContent({
+    tag: actualTag,
+  });
+
+  return {
+    props: {
+      tag: actualTag,
+      posts,
+      tagCounts,
+      author,
+      featuredPosts,
+      searchPosts: posts.map((post) => ({
+        ...post.meta,
+        slug: post.slug,
+      })),
+    },
+  };
+};
 
 export default Tag;

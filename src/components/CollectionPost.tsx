@@ -6,7 +6,7 @@ import Tag from './Tag';
 import ZoomImage from './ZoomImage';
 
 interface CollectionPostProps {
-  post: Post;
+  post: RawPost;
 }
 
 const CollectionPost = ({ post }: CollectionPostProps) => (

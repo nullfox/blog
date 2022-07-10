@@ -17,7 +17,7 @@ import Tag from './Tag';
 import ZoomImage from './ZoomImage';
 
 interface FeaturedPostProps {
-  post: Post;
+  post: RawPost | Post;
   children?: ReactNode;
   linkTitle?: boolean;
 }

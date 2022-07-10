@@ -14,12 +14,22 @@ import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import Primary from '../layouts/Primary';
 
-const Index = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
+interface IndexProps extends PageProps {
+  posts: RawPost[];
+}
+
+const Index = ({
+  posts,
+  searchPosts,
+  featuredPosts,
+  tagCounts,
+  author,
+}: IndexProps) => {
   const latest = posts[0];
   const rest = posts.slice(1);
 
   return (
-    <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
+    <Primary posts={searchPosts} tags={Object.keys(tagCounts || {})}>
       <PageSeo modifiedAt={new Date(latest.meta.date)} />
 
       <Box w="full" pt={{ base: 6, lg: 16 }} px={{ base: '5%', lg: 0 }}>
@@ -57,9 +67,16 @@ export async function getStaticProps() {
   await generateSitemap();
 
   const props = await getAllContent();
+  delete props.post;
 
   return {
-    props,
+    props: {
+      ...props,
+      searchPosts: props.posts.map((post) => ({
+        ...post.meta,
+        slug: post.slug,
+      })),
+    },
   };
 }
 

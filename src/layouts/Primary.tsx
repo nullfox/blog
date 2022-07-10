@@ -24,7 +24,7 @@ import Search from '../components/Search';
 
 interface PrimaryProps {
   children: ReactNode;
-  posts: Post[];
+  posts: SearchPost[];
   tags: string[];
 }
 
@@ -67,11 +67,15 @@ const Primary = ({ children, posts, tags }: PrimaryProps) => {
       includeScore: true,
       keys: [
         {
-          name: 'meta.tags',
+          name: 'tags',
           weight: 0.7,
         },
         {
-          name: 'content',
+          name: 'title',
+          weight: 0.7,
+        },
+        {
+          name: 'excerpt',
           weight: 0.3,
         },
       ],

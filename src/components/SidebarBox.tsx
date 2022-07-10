@@ -43,7 +43,7 @@ const SidebarBox = ({ title, children }: SidebarBoxProps) => (
 );
 
 interface FeaturedPostProps {
-  post: Post;
+  post: RawPost;
 }
 
 export const FeaturedPost = ({ post }: FeaturedPostProps) => (

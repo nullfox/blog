@@ -4,7 +4,7 @@
         <title>Ben Fox's Blog</title>
         <link>https://nullfox.com</link>
         <description>Tips, tricks and guides for TypeScript, web application development and the cloud</description>
-        <lastBuildDate>Sun, 10 Jul 2022 05:58:45 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Jul 2022 18:54:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>NextJS-Blog &amp; Feed for Node.js</generator>
         <image>
@@ -13,28 +13,6 @@
             <link>https://nullfox.com</link>
         </image>
         <copyright>All rights reserved 2022</copyright>
-        <item>
-            <title><![CDATA[Implementing difference, intersection, union and xor in ES6 javascript]]></title>
-            <link>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</link>
-            <guid>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</guid>
-            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[<p>
-      <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
-        <img src="/images/posts/card-deck.jpg" width="696">
-      </a>
-    </p>
-    <p>
-      undefined
-    </p>]]></description>
-            <content:encoded><![CDATA[<p>
-      <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
-        <img src="/images/posts/card-deck.jpg" width="696">
-      </a>
-    </p>
-    <p>
-      undefined
-    </p>]]></content:encoded>
-        </item>
         <item>
             <title><![CDATA[Multiple exports with types in a Typescript Package]]></title>
             <link>https://nullfox.com/multiple-exports-typescript-package-types</link>
@@ -46,7 +24,7 @@
       </a>
     </p>
     <p>
-      undefined
+      Supporting multiple exports with full type declarations in a Typescript package isn't always straightforward.
     </p>]]></description>
             <content:encoded><![CDATA[<p>
       <a href="https://nullfox.com/multiple-exports-typescript-package-types">
@@ -54,7 +32,29 @@
       </a>
     </p>
     <p>
-      undefined
+      Supporting multiple exports with full type declarations in a Typescript package isn't always straightforward.
+    </p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Implementing difference, intersection, union and xor in ES6 javascript]]></title>
+            <link>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</link>
+            <guid>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</guid>
+            <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[<p>
+      <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
+        <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & union-ing
+    </p>]]></description>
+            <content:encoded><![CDATA[<p>
+      <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
+        <img src="/images/posts/card-deck.jpg" width="696">
+      </a>
+    </p>
+    <p>
+      Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & union-ing
     </p>]]></content:encoded>
         </item>
     </channel>

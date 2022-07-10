@@ -22,7 +22,7 @@ import { FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FiSmile } from 'react-icons/fi';
 
 import { PageSeo } from '@nullfox/nextjs-blog';
-import { getPageStaticProps } from '@nullfox/nextjs-blog/content';
+import { getAllContent } from '@nullfox/nextjs-blog/content';
 import axios from 'axios';
 import { GetStaticProps } from 'next';
 
@@ -30,7 +30,12 @@ import Content from '../components/Content';
 import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
 
-const Contact = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
+const Contact = ({
+  searchPosts,
+  featuredPosts,
+  tagCounts,
+  author,
+}: PageProps) => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -94,7 +99,7 @@ const Contact = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
   const success = status.submitted && !status.info.error && status.info.msg;
 
   return (
-    <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
+    <Primary posts={searchPosts} tags={Object.keys(tagCounts || {})}>
       <PageSeo title="Contact Javascript Consultant & Web Application Developer" />
 
       <Content
@@ -218,7 +223,20 @@ const Contact = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () =>
-  getPageStaticProps({});
+export const getStaticProps: GetStaticProps<PageProps> = async () => {
+  const { posts, tagCounts, author, featuredPosts } = await getAllContent();
+
+  return {
+    props: {
+      tagCounts,
+      author,
+      featuredPosts,
+      searchPosts: posts.map((post) => ({
+        ...post.meta,
+        slug: post.slug,
+      })),
+    },
+  };
+};
 
 export default Contact;
