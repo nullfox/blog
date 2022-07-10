@@ -15,7 +15,7 @@ import Content from '../components/Content';
 import FeaturedPost from '../components/FeaturedPost';
 import Primary from '../layouts/Primary';
 
-const Index = ({ posts, featuredPosts, tagCounts }: PageProps) => {
+const Index = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
   const { query } = useRouter();
 
   const filtered = query.unpublished
@@ -33,7 +33,11 @@ const Index = ({ posts, featuredPosts, tagCounts }: PageProps) => {
         <FeaturedPost post={latest} />
       </Box>
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
+      <Content
+        tagCounts={tagCounts}
+        featuredPost={featuredPosts[0]}
+        author={author}
+      >
         {rest.length > 0 && (
           <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={46}>
             {rest.map((item) => (

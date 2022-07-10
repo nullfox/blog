@@ -1,17 +1,17 @@
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "Ben Fox's Blog",
-    "home_page_url": "http://localhost:3000",
-    "feed_url": "http://localhost:3000/rss/feed.json",
+    "home_page_url": "https://nullfox.com",
+    "feed_url": "https://nullfox.com/rss/feed.json",
     "description": "Tips, tricks and guides for TypeScript, web application development and the cloud",
-    "icon": "http://localhost:3000/images/logo.png",
+    "icon": "https://nullfox.com/images/logo.png",
     "items": [
         {
-            "id": "http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6",
-            "content_html": "<p>\n      <a href=\"http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6\">\n        <img src=\"/images/posts/card-deck.jpg\" width=\"696\">\n      </a>\n    </p>\n    <p>\n      undefined\n    </p>",
-            "url": "http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6",
+            "id": "https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6",
+            "content_html": "<p>\n      <a href=\"https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6\">\n        <img src=\"/images/posts/card-deck.jpg\" width=\"696\">\n      </a>\n    </p>\n    <p>\n      undefined\n    </p>",
+            "url": "https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6",
             "title": "Implementing difference, intersection, union and xor in ES6 javascript",
-            "summary": "<p>\n      <a href=\"http://localhost:3000/difference-intersection-union-xor-plain-javascript-es6\">\n        <img src=\"/images/posts/card-deck.jpg\" width=\"696\">\n      </a>\n    </p>\n    <p>\n      undefined\n    </p>",
+            "summary": "<p>\n      <a href=\"https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6\">\n        <img src=\"/images/posts/card-deck.jpg\" width=\"696\">\n      </a>\n    </p>\n    <p>\n      undefined\n    </p>",
             "date_modified": "2022-06-18T00:00:00.000Z"
         }
     ]

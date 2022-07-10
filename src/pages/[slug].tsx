@@ -18,7 +18,7 @@ interface SlugProps extends PageProps {
   post: Post;
 }
 
-const Slug = ({ post, featuredPosts, posts, tagCounts }: SlugProps) => {
+const Slug = ({ post, featuredPosts, posts, tagCounts, author }: SlugProps) => {
   const toast = useToast();
 
   if (!post) {
@@ -106,7 +106,11 @@ const Slug = ({ post, featuredPosts, posts, tagCounts }: SlugProps) => {
         </FeaturedPost>
       </Box>
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
+      <Content
+        tagCounts={tagCounts}
+        featuredPost={featuredPosts[0]}
+        author={author}
+      >
         <Box className="content-md" w="full">
           <PostRenderer post={post} />
         </Box>

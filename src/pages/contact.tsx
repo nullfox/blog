@@ -30,7 +30,7 @@ import Content from '../components/Content';
 import SocialButton from '../components/SocialButton';
 import Primary from '../layouts/Primary';
 
-const Contact = ({ posts, featuredPosts, tagCounts }: PageProps) => {
+const Contact = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -97,7 +97,11 @@ const Contact = ({ posts, featuredPosts, tagCounts }: PageProps) => {
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
       <PageSeo title="Contact Javascript Consultant & Web Application Developer" />
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
+      <Content
+        tagCounts={tagCounts}
+        featuredPost={featuredPosts[0]}
+        author={author}
+      >
         <Heading fontWeight="800" fontSize="3xl">
           Come say hello!
         </Heading>

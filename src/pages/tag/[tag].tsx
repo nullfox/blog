@@ -15,7 +15,7 @@ interface TagProps extends PageProps {
   tag: string;
 }
 
-const Tag = ({ tag, posts, featuredPosts, tagCounts }: TagProps) => {
+const Tag = ({ tag, posts, featuredPosts, tagCounts, author }: TagProps) => {
   if (!tag) {
     return null;
   }
@@ -38,7 +38,11 @@ const Tag = ({ tag, posts, featuredPosts, tagCounts }: TagProps) => {
         </Heading>
       </Flex>
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
+      <Content
+        tagCounts={tagCounts}
+        featuredPost={featuredPosts[0]}
+        author={author}
+      >
         <SimpleGrid minChildWidth="400px" spacingX="5%" spacingY={16}>
           {(posts || []).map((item) => (
             <CollectionPost key={item.slug} post={item} />

@@ -11,6 +11,7 @@ interface ContentProps {
   children: ReactNode;
   featuredPost: Post;
   tagCounts: Record<string, number>;
+  author: Author;
   sidebarBeforeChildren?: ReactNode;
   sidebarAfterChildren?: ReactNode;
 }
@@ -19,6 +20,7 @@ const Content = ({
   children,
   featuredPost,
   tagCounts,
+  author,
   sidebarBeforeChildren,
   sidebarAfterChildren,
 }: ContentProps) => (
@@ -40,14 +42,17 @@ const Content = ({
               w="25%"
               icon={FaTwitter}
               onClick={() =>
-                window.open('https://twitter.com/thenullfox', '_blank')
+                window.open(`https://twitter.com/${author.twitter}`, '_blank')
               }
             />
             <SocialButton
               w="25%"
               icon={FaLinkedinIn}
               onClick={() =>
-                window.open('https://www.linkedin.com/in/nullfox', '_blank')
+                window.open(
+                  `https://www.linkedin.com/in/${author.linkedin}`,
+                  '_blank',
+                )
               }
             />
           </HStack>

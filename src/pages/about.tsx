@@ -7,12 +7,16 @@ import { GetStaticProps } from 'next';
 import Content from '../components/Content';
 import Primary from '../layouts/Primary';
 
-const About = ({ posts, featuredPosts, tagCounts }: PageProps) => {
+const About = ({ posts, featuredPosts, tagCounts, author }: PageProps) => {
   return (
     <Primary posts={posts} tags={Object.keys(tagCounts || {})}>
       <PageSeo title="About Javascript Consultant & Web Application Developer" />
 
-      <Content tagCounts={tagCounts} featuredPost={featuredPosts[0]}>
+      <Content
+        tagCounts={tagCounts}
+        featuredPost={featuredPosts[0]}
+        author={author}
+      >
         <Box
           borderRadius={4}
           bgImage="linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(/images/about.jpg)"
