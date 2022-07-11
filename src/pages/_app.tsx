@@ -22,11 +22,11 @@ type AppWindow = typeof window & {
 
 configure({
   site: {
-    hostname: 'https://nullfox.com',
+    hostname: 'https://www.nullfox.com',
     title: "Ben Fox's Blog",
     description:
       'Tips, tricks and guides for TypeScript, web application development and the cloud',
-    image: 'https://nullfox.com/images/logo.png',
+    image: 'https://www.nullfox.com/images/logo.png',
   },
   defaultAuthor: 'Ben Fox',
   authors: [
