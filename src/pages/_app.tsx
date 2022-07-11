@@ -27,6 +27,7 @@ configure({
     description:
       'Tips, tricks and guides for TypeScript, web application development and the cloud',
     image: 'https://www.nullfox.com/images/logo.png',
+    twitter: '@thenullfox',
   },
   defaultAuthor: 'Ben Fox',
   authors: [

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Ben Fox's Blog</title>
-        <link>https://nullfox.com</link>
+        <link>https://www.nullfox.com</link>
         <description>Tips, tricks and guides for TypeScript, web application development and the cloud</description>
-        <lastBuildDate>Sun, 10 Jul 2022 18:54:32 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 11 Jul 2022 05:00:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>NextJS-Blog &amp; Feed for Node.js</generator>
         <image>
             <title>Ben Fox's Blog</title>
-            <url>https://nullfox.com/images/logo.png</url>
-            <link>https://nullfox.com</link>
+            <url>https://www.nullfox.com/images/logo.png</url>
+            <link>https://www.nullfox.com</link>
         </image>
         <copyright>All rights reserved 2022</copyright>
         <item>
             <title><![CDATA[Multiple exports with types in a Typescript Package]]></title>
-            <link>https://nullfox.com/multiple-exports-typescript-package-types</link>
-            <guid>https://nullfox.com/multiple-exports-typescript-package-types</guid>
+            <link>https://www.nullfox.com/multiple-exports-typescript-package-types</link>
+            <guid>https://www.nullfox.com/multiple-exports-typescript-package-types</guid>
             <pubDate>Sat, 09 Jul 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>
-      <a href="https://nullfox.com/multiple-exports-typescript-package-types">
+      <a href="https://www.nullfox.com/multiple-exports-typescript-package-types">
         <img src="/images/posts/types.jpg" width="696">
       </a>
     </p>
@@ -27,7 +27,7 @@
       Supporting multiple exports with full type declarations in a Typescript package isn't always straightforward.
     </p>]]></description>
             <content:encoded><![CDATA[<p>
-      <a href="https://nullfox.com/multiple-exports-typescript-package-types">
+      <a href="https://www.nullfox.com/multiple-exports-typescript-package-types">
         <img src="/images/posts/types.jpg" width="696">
       </a>
     </p>
@@ -37,11 +37,11 @@
         </item>
         <item>
             <title><![CDATA[Implementing difference, intersection, union and xor in ES6 javascript]]></title>
-            <link>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</link>
-            <guid>https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6</guid>
+            <link>https://www.nullfox.com/difference-intersection-union-xor-plain-javascript-es6</link>
+            <guid>https://www.nullfox.com/difference-intersection-union-xor-plain-javascript-es6</guid>
             <pubDate>Sat, 18 Jun 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[<p>
-      <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
+      <a href="https://www.nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
         <img src="/images/posts/card-deck.jpg" width="696">
       </a>
     </p>
@@ -49,7 +49,7 @@
       Skip lodash and up your game with 0 dependency solutions for array filtering, diffing & union-ing
     </p>]]></description>
             <content:encoded><![CDATA[<p>
-      <a href="https://nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
+      <a href="https://www.nullfox.com/difference-intersection-union-xor-plain-javascript-es6">
         <img src="/images/posts/card-deck.jpg" width="696">
       </a>
     </p>
